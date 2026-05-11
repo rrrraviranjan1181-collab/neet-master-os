@@ -730,57 +730,86 @@ return `${subject}_${chapter}_${task}`;
 
 function updateProgress(){
 
-let total = 0;
-let done = 0;
+let totalPercent = 0;
 
 for(let subject in allSubjects){
 
 allSubjects[subject]
+
 .forEach(ch=>{
 
-getTasks(subject)
-.forEach(task=>{
+const tasks =
 
-total++;
+getTasks(subject);
+
+let completed = 0;
+
+tasks.forEach(task=>{
 
 if(
+
 localStorage.getItem(
+
 getKey(subject,ch,task)
+
 )
+
 ){
-done++;
+
+completed++;
+
 }
 
 });
+
+const chapterProgress =
+
+completed / tasks.length;
+
+const chapterWeight =
+
+100 / 91;
+
+totalPercent +=
+
+chapterProgress * chapterWeight;
 
 });
 
 }
 
 const percent =
-((done/total)*100)
-.toFixed(2);
+
+totalPercent.toFixed(2);
 
 const bar =
+
 document.getElementById(
+
 "progressBar"
+
 );
 
 if(bar){
 
 bar.style.width =
+
 percent + "%";
 
 }
 
 const text =
+
 document.getElementById(
+
 "progressText"
+
 );
 
 if(text){
 
 text.innerText =
+
 percent + "% Completed";
 
 }
@@ -1599,38 +1628,64 @@ function updateSubjectCompletion(){
 
 for(let subject in allSubjects){
 
-let total = 0;
-let done = 0;
+let totalProgress = 0;
+
+const totalChapters =
+
+allSubjects[subject].length;
 
 allSubjects[subject]
+
 .forEach(ch=>{
 
-getTasks(subject)
-.forEach(task=>{
+const tasks =
 
-total++;
+getTasks(subject);
+
+let completed = 0;
+
+tasks.forEach(task=>{
 
 if(
+
 localStorage.getItem(
+
 getKey(subject,ch,task)
+
 )
+
 ){
-done++;
+
+completed++;
+
 }
 
 });
 
+totalProgress +=
+
+completed / tasks.length;
+
 });
 
 const percent =
-((done/total)*100)
-.toFixed(1);
+
+(
+
+(totalProgress / totalChapters)
+
+* 100
+
+).toFixed(1);
 
 if(subject==="Physics"){
 
 document.getElementById(
+
 "phyPercent"
+
 ).innerText =
+
 percent + "%";
 
 }
@@ -1638,8 +1693,11 @@ percent + "%";
 if(subject==="Chemistry"){
 
 document.getElementById(
+
 "chemPercent"
+
 ).innerText =
+
 percent + "%";
 
 }
@@ -1647,8 +1705,11 @@ percent + "%";
 if(subject==="Biology"){
 
 document.getElementById(
+
 "bioPercent"
+
 ).innerText =
+
 percent + "%";
 
 }
