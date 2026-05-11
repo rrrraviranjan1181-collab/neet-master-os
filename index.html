@@ -1,4 +1,3 @@
-<!-- ========================= NEET MASTER OS FINAL CLOUD SYNC : PART 1 / 10 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -851,7 +850,10 @@ subject,
 chapter,
 task,
 done:value,
-date
+date,
+calendarDate:new Date()
+.toISOString()
+.split('T')[0]
 }
 );
 
@@ -900,7 +902,38 @@ localStorage.setItem(
 key+"_date",
 data.date
 );
+const calendarKey =
+(
+data.calendarDate ||
+new Date()
+.toISOString()
+.split('T')[0]
+)
++
+"_" +
+data.subject;
 
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+const text =
+data.chapter +
+" → " +
+data.task;
+
+if(!arr.includes(text)){
+
+arr.push(text);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
+
+}
 }else{
 
 localStorage.removeItem(
@@ -910,7 +943,35 @@ key
 localStorage.removeItem(
 key+"_date"
 );
+const calendarKey =
+(
+data.calendarDate ||
+new Date()
+.toISOString()
+.split('T')[0]
+)
++
+"_" +
+data.subject;
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
 
+const text =
+data.chapter +
+" → " +
+data.task;
+
+arr = arr.filter(
+item => item !== text
+);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
 }
 
 });
@@ -962,7 +1023,38 @@ localStorage.setItem(
 key+"_date",
 data.date
 );
+const calendarKey =
+(
+data.calendarDate ||
+new Date()
+.toISOString()
+.split('T')[0]
+)
++
+"_" +
+data.subject;
 
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+const text =
+data.chapter +
+" → " +
+data.task;
+
+if(!arr.includes(text)){
+
+arr.push(text);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
+
+}
 }else{
 
 localStorage.removeItem(
@@ -972,7 +1064,36 @@ key
 localStorage.removeItem(
 key+"_date"
 );
+const calendarKey =
+(
+data.calendarDate ||
+new Date()
+.toISOString()
+.split('T')[0]
+)
++
+"_" +
+data.subject;
 
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+const text =
+data.chapter +
+" → " +
+data.task;
+
+arr = arr.filter(
+item => item !== text
+);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
 }
 
 });
@@ -1901,7 +2022,17 @@ window.firebaseReady = true;
 
 async function startApp(){
 
+try{
+
 await loadCloudData();
+
+}catch(error){
+
+console.log(error);
+
+renderAdmin();
+
+}
 
 startRealtimeSync();
 
@@ -1948,12 +2079,6 @@ updateSubjectCompletion();
 
 }
 );
-
-setInterval(()=>{
-
-updateProgress();
-
-},3000);
 
 setInterval(()=>{
 
