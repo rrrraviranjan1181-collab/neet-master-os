@@ -1965,6 +1965,175 @@ renderUT(val);
 );
 
 renderStartupLoader();
+// ================= TELEGRAM DAILY REPORT =================
+
+const BOT_TOKEN =
+"8677381090:AAGGJ_Oy7kNalOH1X8rxkqJv4SlyllN7wqQ";
+
+const CHAT_ID =
+"8681702043";
+
+async function sendYesterdayReport(){
+
+try{
+
+const today =
+new Date()
+.toISOString()
+.split('T')[0];
+
+const alreadySent =
+localStorage.getItem(
+"lastReportSent"
+);
+
+if(alreadySent === today){
+return;
+}
+
+const yesterdayDate =
+new Date(
+Date.now() - 86400000
+)
+.toISOString()
+.split('T')[0];
+
+let physics =
+JSON.parse(
+localStorage.getItem(
+yesterdayDate + "_Physics"
+) || "[]"
+);
+
+let chemistry =
+JSON.parse(
+localStorage.getItem(
+yesterdayDate + "_Chemistry"
+) || "[]"
+);
+
+let biology =
+JSON.parse(
+localStorage.getItem(
+yesterdayDate + "_Biology"
+) || "[]"
+);
+
+let total =
+physics.length +
+chemistry.length +
+biology.length;
+
+let message = "";
+
+if(total === 0){
+
+message =
+
+"📘 NEET MASTER OS REPORT\n\n" +
+
+"📅 Date: " +
+yesterdayDate +
+
+"\n\n❌ No work completed.";
+
+}else{
+
+message =
+
+"📘 NEET MASTER OS REPORT\n\n" +
+
+"📅 Date: " +
+yesterdayDate +
+
+"\n\n⚡ Physics:\n" +
+
+(
+physics.length
+?
+physics.join("\n")
+:
+"No work"
+)
+
++
+
+"\n\n🧪 Chemistry:\n" +
+
+(
+chemistry.length
+?
+chemistry.join("\n")
+:
+"No work"
+)
+
++
+
+"\n\n🧬 Biology:\n" +
+
+(
+biology.length
+?
+biology.join("\n")
+:
+"No work"
+)
+
++
+
+"\n\n✅ Total Tasks: " +
+total;
+
+}
+
+await fetch(
+
+"https://api.telegram.org/bot"
++
+BOT_TOKEN +
+"/sendMessage",
+
+{
+method:"POST",
+
+headers:{
+"Content-Type":
+"application/json"
+},
+
+body:JSON.stringify({
+
+chat_id: CHAT_ID,
+
+text: message
+
+})
+
+}
+
+);
+
+localStorage.setItem(
+"lastReportSent",
+today
+);
+
+console.log(
+"Yesterday report sent"
+);
+
+}catch(error){
+
+console.log(
+"Telegram failed"
+);
+
+}
+
+}
+
+sendYesterdayReport();
 
 </script>
 
