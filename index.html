@@ -1,0 +1,1318 @@
+<!-- ========================= PART 1 / 2 ========================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NEET MASTER OS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#020617,#0f172a,#111827);
+color:white;
+padding:20px;
+min-height:100vh;
+}
+
+h1{
+font-size:38px;
+text-align:center;
+margin-bottom:20px;
+background:linear-gradient(to right,#38bdf8,#22c55e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+h2{
+margin-bottom:10px;
+color:#38bdf8;
+}
+
+h3{
+margin-top:10px;
+margin-bottom:10px;
+}
+
+.card{
+background:rgba(30,41,59,0.7);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,0.1);
+padding:20px;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 0 20px rgba(0,0,0,0.3);
+}
+
+select,input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#0f172a;
+color:white;
+margin-top:8px;
+margin-bottom:10px;
+}
+
+button{
+padding:12px 18px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+font-weight:bold;
+background:linear-gradient(to right,#38bdf8,#22c55e);
+color:black;
+margin-top:10px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.03);
+}
+
+.progress-container{
+width:100%;
+height:28px;
+background:#0f172a;
+border-radius:20px;
+overflow:hidden;
+margin-top:10px;
+}
+
+#progressBar{
+height:100%;
+width:0%;
+background:linear-gradient(to right,#22c55e,#38bdf8);
+transition:0.5s;
+}
+
+.chapter{
+background:#111827;
+padding:15px;
+border-radius:15px;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+border:1px solid #334155;
+padding:10px;
+}
+
+input[type="checkbox"]{
+transform:scale(1.3);
+width:auto;
+}
+
+.subject-title{
+margin-top:25px;
+font-size:24px;
+color:#22c55e;
+}
+
+ul{
+padding-left:20px;
+margin-top:10px;
+}
+
+li{
+margin-bottom:6px;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:15px;
+}
+
+.stat-box{
+background:#111827;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.red{
+color:#ef4444;
+}
+
+.green{
+color:#22c55e;
+}
+
+.yellow{
+color:#eab308;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>NEET MASTER OS</h1>
+
+<select id="mainSelect">
+
+<option value="admin">ADMIN PANEL</option>
+<option value="full">FULL SYLLABUS PROGRESS</option>
+<option value="data">DATA FEEDER</option>
+
+<option value="ut1">UNIT TEST 1</option>
+<option value="ut2">UNIT TEST 2</option>
+<option value="ut3">UNIT TEST 3</option>
+<option value="ut4">UNIT TEST 4 + REVIEW TEST 1</option>
+<option value="ut5">UNIT TEST 5</option>
+<option value="ut6">UNIT TEST 6 + REVIEW TEST 2</option>
+<option value="ut7">UNIT TEST 7</option>
+<option value="ut8">UNIT TEST 8</option>
+<option value="ut9">UNIT TEST 9 + REVIEW TEST 3</option>
+<option value="ut10">UNIT TEST 10 + REVIEW TEST 4</option>
+
+</select>
+
+<div id="content"></div>
+
+<script>
+
+const physicsTasks = [
+"Lecture + Notes",
+"ALLEN Questions",
+"PYQs",
+"Short Notes"
+];
+
+const chemistryTasks = [
+"Lecture + Notes",
+"ALLEN Questions",
+"PYQs",
+"Advanced Book",
+"NCERT Reading",
+"Short Notes"
+];
+
+const biologyTasks = [
+"Lecture + Notes",
+"ALLEN Questions",
+"PYQs",
+"NCERT Reading",
+"Memo NEET Questions",
+"Short Notes"
+];
+
+const allSubjects = {
+
+Physics:[
+"Basic Maths+ Vectors",
+"Units and measurements",
+"Kinematics",
+"Laws of motion",
+"Circular Motion",
+"Work, energy, and power",
+"Centre of mass and collision",
+"System of particles and rotational motion",
+"Gravitation",
+"Mechanical properties of solids",
+"Mechanical properties of fluids",
+"Thermal properties of matter",
+"Thermodynamics",
+"Kinetic theory of gases",
+"Oscillations",
+"Waves",
+"Electric charges and fields",
+"Electrostatic potential and capacitance",
+"Current electricity",
+"Moving charges and magnetism",
+"Magnetism and matter",
+"Electromagnetic induction",
+"Alternating current",
+"Electromagnetic waves",
+"Ray optics and optical instruments",
+"Wave optics",
+"Dual nature of matter and radiation",
+"Atoms",
+"Nuclei",
+"Semiconductor electronics",
+"Practical Physics"
+],
+
+Chemistry:[
+"Some Basic Concepts of Chemistry",
+"Structure of Atom",
+"Periodic Table",
+"Chemical Bonding and Molecular Structure",
+"Thermodynamics",
+"Chemical Equilibrium",
+"Ionic Equilibrium",
+"Redox Reactions",
+"IUPAC",
+"Isomerism",
+"GOC",
+"Hydrocarbons",
+"Purification of Organic compounds",
+"Solutions",
+"Electrochemistry",
+"Chemical Kinetics",
+"P-Block Elements",
+"The d- and f-Block Elements",
+"Coordination Compounds",
+"Haloalkanes and Haloarenes",
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids",
+"Amines",
+"Biomolecules",
+"Practical Chemistry"
+],
+
+Biology:[
+"The Living World",
+"Biological Classification",
+"Plant Kingdom",
+"Animal Kingdom",
+"Morphology of Flowering Plants",
+"Anatomy of Flowering Plants",
+"Structural Organisation in Animals",
+"Cell – The Unit of Life",
+"Biomolecules",
+"Cell Cycle and Cell Division",
+"Photosynthesis in Higher Plants",
+"Respiration in Plants",
+"Plant Growth and Development",
+"Breathing and Exchange of Gases",
+"Excretory Products and Their Elimination",
+"Body Fluids and Circulation",
+"Locomotion and Movement",
+"Neural Control and Coordination",
+"Chemical Coordination and Integration",
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health",
+"Principles of Inheritance and Variation",
+"Molecular Basis of Inheritance",
+"Evolution",
+"Human Health and Diseases",
+"Microbes in Human Welfare",
+"Biotechnology – Principles and Processes",
+"Biotechnology and Its Applications",
+"Organisms and Populations",
+"Ecosystem",
+"Biodiversity and Conservation",
+"Environmental Issues",
+"Practical Biology"
+]
+
+};
+
+const tests = {
+
+ut1:{
+title:"UNIT TEST 1",
+date:"31 May 2026",
+chapters:{
+Physics:[
+"Basic Maths+ Vectors",
+"Units and measurements"
+],
+Chemistry:[
+"Some Basic Concepts of Chemistry",
+"Structure of Atom"
+],
+Biology:[
+"The Living World",
+"Biological Classification",
+"Plant Kingdom",
+"Animal Kingdom"
+]
+}
+},
+
+ut2:{
+title:"UNIT TEST 2",
+date:"10 June 2026",
+chapters:{
+Physics:[
+"Kinematics",
+"Current electricity"
+],
+Chemistry:[
+"Chemical Kinetics",
+"Chemical Equilibrium",
+"Ionic Equilibrium"
+],
+Biology:[
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health"
+]
+}
+},
+
+ut3:{
+title:"UNIT TEST 3",
+date:"20 June 2026",
+chapters:{
+Physics:[
+"Laws of motion",
+"Electrostatic potential and capacitance"
+],
+Chemistry:[
+"Periodic Table",
+"Chemical Bonding and Molecular Structure"
+],
+Biology:[
+"Anatomy of Flowering Plants",
+"Morphology of Flowering Plants",
+"Structural Organisation in Animals",
+"Locomotion and Movement"
+]
+}
+},
+
+ut4:{
+title:"UNIT TEST 4 + REVIEW TEST 1",
+date:"30 June 2026",
+chapters:{
+Physics:[
+"Circular Motion",
+"Work, energy, and power",
+"Moving charges and magnetism",
+"Magnetism and matter"
+],
+Chemistry:[
+"Solutions",
+"Electrochemistry"
+],
+Biology:[
+"Principles of Inheritance and Variation",
+"Biotechnology – Principles and Processes",
+"Biotechnology and Its Applications"
+]
+}
+},
+ut5:{
+title:"UNIT TEST 5",
+date:"10 July 2026",
+chapters:{
+Physics:[
+"Centre of mass and collision",
+"Electromagnetic induction"
+],
+Chemistry:[
+"Thermodynamics",
+"Redox Reactions"
+],
+Biology:[
+"Molecular Basis of Inheritance",
+"Microbes in Human Welfare",
+"Evolution"
+]
+}
+},
+
+ut6:{
+title:"UNIT TEST 6 + REVIEW TEST 2",
+date:"20 July 2026",
+chapters:{
+Physics:[
+"System of particles and rotational motion",
+"Alternating current",
+"Electromagnetic waves"
+],
+Chemistry:[
+"P-Block Elements",
+"The d- and f-Block Elements",
+"Coordination Compounds"
+],
+Biology:[
+"Organisms and Populations",
+"Human Health and Diseases"
+]
+}
+},
+
+ut7:{
+title:"UNIT TEST 7",
+date:"30 July 2026",
+chapters:{
+Physics:[
+"Thermal properties of matter",
+"Thermodynamics",
+"Kinetic theory of gases",
+"Ray optics and optical instruments"
+],
+Chemistry:[
+"IUPAC",
+"Isomerism",
+"GOC",
+"Purification of Organic compounds"
+],
+Biology:[
+"Ecosystem",
+"Biodiversity and Conservation",
+"Chemical Coordination and Integration"
+]
+}
+},
+
+ut8:{
+title:"UNIT TEST 8",
+date:"10 August 2026",
+chapters:{
+Physics:[
+"Mechanical properties of solids",
+"Mechanical properties of fluids",
+"Wave optics"
+],
+Chemistry:[
+"Hydrocarbons",
+"Haloalkanes and Haloarenes"
+],
+Biology:[
+"Cell – The Unit of Life",
+"Cell Cycle and Cell Division",
+"Biomolecules",
+"Breathing and Exchange of Gases",
+"Body Fluids and Circulation"
+]
+}
+},
+
+ut9:{
+title:"UNIT TEST 9 + REVIEW TEST 3",
+date:"20 August 2026",
+chapters:{
+Physics:[
+"Gravitation",
+"Oscillations",
+"Dual nature of matter and radiation",
+"Atoms",
+"Nuclei"
+],
+Chemistry:[
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids"
+],
+Biology:[
+"Photosynthesis in Higher Plants",
+"Respiration in Plants",
+"Excretory Products and Their Elimination"
+]
+}
+},
+
+ut10:{
+title:"UNIT TEST 10 + REVIEW TEST 4",
+date:"30 August 2026",
+chapters:{
+Physics:[
+"Waves",
+"Semiconductor electronics"
+],
+Chemistry:[
+"Amines",
+"Biomolecules"
+],
+Biology:[
+"Plant Growth and Development",
+"Neural Control and Coordination"
+]
+}
+}
+
+};
+
+function getTasks(subject){
+
+if(subject==="Physics") return physicsTasks;
+if(subject==="Chemistry") return chemistryTasks;
+return biologyTasks;
+
+}
+
+function getKey(subject,chapter,task){
+
+return `${subject}_${chapter}_${task}`;
+
+}
+
+function updateProgress(){
+
+let total = 0;
+let done = 0;
+
+for(let subject in allSubjects){
+
+allSubjects[subject].forEach(ch=>{
+
+getTasks(subject).forEach(task=>{
+
+total++;
+
+if(localStorage.getItem(
+getKey(subject,ch,task)
+)){
+done++;
+}
+
+});
+
+});
+
+}
+
+let percent = ((done/total)*100).toFixed(2);
+
+const bar = document.getElementById("progressBar");
+
+if(bar){
+bar.style.width = percent+"%";
+}
+
+const text = document.getElementById("progressText");
+
+if(text){
+text.innerText = percent+"% Completed";
+}
+
+}
+
+function fillDateTime(cb,subject,chapter,task){
+
+const row = cb.parentElement.parentElement;
+
+const input =
+row.querySelector(".dateField");
+
+const key = getKey(subject,chapter,task);
+
+const today =
+new Date().toISOString().split('T')[0];
+
+const calendarKey =
+today + "_" + subject;
+
+const text =
+chapter + " → " + task;
+
+if(cb.checked){
+
+const now = new Date();
+
+const formatted =
+now.toLocaleDateString()
++" "+
+now.toLocaleTimeString();
+
+input.value = formatted;
+
+localStorage.setItem(key,"done");
+localStorage.setItem(key+"_date",formatted);
+
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+if(!arr.includes(text)){
+
+arr.push(text);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
+
+}
+
+}else{
+
+input.value="";
+
+localStorage.removeItem(key);
+localStorage.removeItem(key+"_date");
+
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+arr = arr.filter(
+item => item !== text
+);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
+
+}
+
+updateProgress();
+
+renderCalendar();
+
+}
+
+function createTable(subject,chapter){
+
+let html = `
+<table>
+
+<tr>
+<th>Task</th>
+<th>Done</th>
+<th>Completion Time</th>
+</tr>
+`;
+
+getTasks(subject).forEach(task=>{
+
+const key = getKey(subject,chapter,task);
+
+const checked =
+localStorage.getItem(key)
+? "checked"
+: "";
+
+const savedDate =
+localStorage.getItem(key+"_date")
+|| "";
+
+html += `
+<tr>
+
+<td>${task}</td>
+
+<td>
+
+<input
+type="checkbox"
+${checked}
+onchange="
+fillDateTime(
+this,
+'${subject}',
+'${chapter}',
+'${task}'
+)
+">
+
+</td>
+
+<td>
+
+<input
+class="dateField"
+readonly
+value="${savedDate}"
+>
+
+</td>
+
+</tr>
+`;
+
+});
+
+html += `</table>`;
+
+return html;
+
+}
+
+function saveCalendarLog(subject,chapter,task){
+
+const today =
+new Date().toISOString().split('T')[0];
+
+const key =
+today+"_"+subject;
+
+let arr =
+JSON.parse(
+localStorage.getItem(key)
+|| "[]"
+);
+
+const text =
+chapter+" → "+task;
+
+if(!arr.includes(text)){
+
+arr.push(text);
+
+localStorage.setItem(
+key,
+JSON.stringify(arr)
+);
+
+}
+
+}
+
+let currentDate = new Date();
+
+function changeDay(num){
+
+currentDate.setDate(
+currentDate.getDate()+num
+);
+
+renderCalendar();
+
+}
+
+function renderCalendar(){
+
+const d =
+currentDate.toISOString().split('T')[0];
+
+document.getElementById(
+"calendarDate"
+).innerText =
+currentDate.toDateString();
+
+["Physics","Chemistry","Biology"]
+.forEach(sub=>{
+
+const data =
+JSON.parse(
+localStorage.getItem(d+"_"+sub)
+|| "[]"
+);
+
+document.getElementById(
+sub+"Log"
+).innerHTML =
+data.map(
+x=>`<li>${x}</li>`
+).join("");
+
+});
+
+}
+
+function getChapterAccuracy(subject,chapter){
+
+const key =
+"accuracy_"+subject+"_"+chapter;
+
+const data =
+JSON.parse(
+localStorage.getItem(key)
+|| '{"attempted":0,"correct":0}'
+);
+
+if(data.attempted===0) return 0;
+
+return (
+(data.correct/data.attempted)*100
+).toFixed(1);
+
+}
+
+function renderAdmin(){
+
+let html = `
+
+<div class="card">
+
+<h2>Daily Routine</h2>
+
+<ul>
+<li>7:00 - 9:30 → Test</li>
+<li>10:30 - 2:30 → Physics</li>
+<li>5:00 - 8:00 → Chemistry</li>
+<li>9:00 - 12:00 → Biology</li>
+</ul>
+
+<h3>Total Study Hours = 12.5 hrs/day</h3>
+
+<h2>Overall Progress</h2>
+
+<div class="progress-container">
+<div id="progressBar"></div>
+</div>
+
+<h3 id="progressText">
+0% Completed
+</h3>
+
+</div>
+
+<div class="card">
+
+<h2>Study Calendar</h2>
+
+<button onclick="changeDay(-1)">
+⬅ Previous Day
+</button>
+
+<button onclick="changeDay(1)">
+Next Day ➡
+</button>
+
+<h3 id="calendarDate"></h3>
+
+<div class="chapter">
+<h3>Physics</h3>
+<ul id="PhysicsLog"></ul>
+</div>
+
+<div class="chapter">
+<h3>Chemistry</h3>
+<ul id="ChemistryLog"></ul>
+</div>
+
+<div class="chapter">
+<h3>Biology</h3>
+<ul id="BiologyLog"></ul>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Subject Completion</h2>
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h3>Physics</h3>
+<p id="phyPercent"></p>
+</div>
+
+<div class="stat-box">
+<h3>Chemistry</h3>
+<p id="chemPercent"></p>
+</div>
+
+<div class="stat-box">
+<h3>Biology</h3>
+<p id="bioPercent"></p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Weak Chapters (&lt;80%)</h2>
+
+<div id="weakList"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Danger Zone</h2>
+
+<button onclick="resetAllData()">
+RESET EVERYTHING
+</button>
+
+</div>
+`;
+
+document.getElementById(
+"content"
+).innerHTML = html;
+
+updateProgress();
+
+renderCalendar();
+
+updateSubjectCompletion();
+
+showWeakChapters();
+
+}
+
+function updateSubjectCompletion(){
+
+for(let subject in allSubjects){
+
+let total=0;
+let done=0;
+
+allSubjects[subject].forEach(ch=>{
+
+getTasks(subject)
+.forEach(task=>{
+
+total++;
+
+if(localStorage.getItem(
+getKey(subject,ch,task)
+)){
+done++;
+}
+
+});
+
+});
+
+let percent =
+((done/total)*100)
+.toFixed(1);
+
+if(subject==="Physics"){
+document.getElementById(
+"phyPercent"
+).innerText =
+percent+"%";
+}
+
+if(subject==="Chemistry"){
+document.getElementById(
+"chemPercent"
+).innerText =
+percent+"%";
+}
+
+if(subject==="Biology"){
+document.getElementById(
+"bioPercent"
+).innerText =
+percent+"%";
+}
+
+}
+
+}
+
+function showWeakChapters(){
+
+let html = "";
+
+for(let subject in allSubjects){
+
+html += `
+<h3 class="subject-title">
+${subject}
+</h3>
+<ul>
+`;
+
+allSubjects[subject].forEach(ch=>{
+
+const acc =
+getChapterAccuracy(subject,ch);
+
+if(acc<80 && acc>0){
+
+html += `
+<li class="red">
+${ch} → ${acc}%
+</li>
+`;
+
+}
+
+});
+
+html += `</ul>`;
+
+}
+
+document.getElementById(
+"weakList"
+).innerHTML = html;
+
+}
+
+function renderDataFeeder(){
+
+let html = `
+
+<div class="card">
+
+<h2>DATA FEEDER</h2>
+
+<label>Subject</label>
+
+<select id="feedSubject"
+onchange="loadChapters()">
+
+<option>Physics</option>
+<option>Chemistry</option>
+<option>Biology</option>
+
+</select>
+
+<label>Chapter</label>
+
+<select id="feedChapter"></select>
+
+<label>Total Questions Attempted</label>
+
+<input
+type="number"
+id="attempted"
+placeholder="Enter Attempted Questions"
+>
+
+<label>Correct Questions</label>
+
+<input
+type="number"
+id="correct"
+placeholder="Enter Correct Questions"
+>
+
+<button onclick="saveAccuracy()">
+SAVE DATA
+</button>
+
+<div id="accuracyResult"></div>
+
+</div>
+`;
+
+document.getElementById(
+"content"
+).innerHTML = html;
+
+loadChapters();
+
+}
+
+function loadChapters(){
+
+const sub =
+document.getElementById(
+"feedSubject"
+).value;
+
+const chapterSelect =
+document.getElementById(
+"feedChapter"
+);
+
+chapterSelect.innerHTML = "";
+
+allSubjects[sub].forEach(ch=>{
+
+chapterSelect.innerHTML += `
+<option>${ch}</option>
+`;
+
+});
+
+}
+
+function saveAccuracy(){
+
+const sub =
+document.getElementById(
+"feedSubject"
+).value;
+
+const ch =
+document.getElementById(
+"feedChapter"
+).value;
+
+const attempted =
+Number(
+document.getElementById(
+"attempted"
+).value
+);
+
+const correct =
+Number(
+document.getElementById(
+"correct"
+).value
+);
+
+const accuracy =
+((correct/attempted)*100)
+.toFixed(1);
+
+localStorage.setItem(
+"accuracy_"+sub+"_"+ch,
+JSON.stringify({
+attempted,
+correct
+})
+);
+
+document.getElementById(
+"accuracyResult"
+).innerHTML = `
+<h3 class="
+${accuracy>=80
+? 'green'
+: 'red'}
+">
+
+Accuracy :
+${accuracy}%
+
+</h3>
+`;
+
+}
+
+function renderFull(){
+
+let html = `
+<div class="card">
+
+<h2>FULL SYLLABUS PROGRESS</h2>
+`;
+
+for(let subject in allSubjects){
+
+html += `
+<h2 class="subject-title">
+${subject}
+</h2>
+`;
+
+allSubjects[subject]
+.forEach(ch=>{
+
+html += `
+<div class="chapter">
+
+<h3>${ch}</h3>
+
+${createTable(subject,ch)}
+
+</div>
+`;
+
+});
+
+}
+
+html += `</div>`;
+
+document.getElementById(
+"content"
+).innerHTML = html;
+
+}
+
+function renderUT(key){
+
+const test = tests[key];
+
+let html = `
+<div class="card">
+
+<h2>${test.title}</h2>
+
+<h3>${test.date}</h3>
+`;
+
+for(let subject in test.chapters){
+
+html += `
+<h2 class="subject-title">
+${subject}
+</h2>
+`;
+
+test.chapters[subject]
+.forEach(ch=>{
+
+html += `
+<div class="chapter">
+
+<h3>${ch}</h3>
+
+${createTable(subject,ch)}
+
+</div>
+`;
+
+});
+
+}
+
+html += `</div>`;
+
+document.getElementById(
+"content"
+).innerHTML = html;
+
+}
+
+function resetAllData(){
+
+const first =
+confirm(
+"Are you sure you want to reset everything?"
+);
+
+if(!first) return;
+
+const second =
+confirm(
+"This will permanently delete ALL data. Continue?"
+);
+
+if(!second) return;
+
+localStorage.clear();
+
+alert("All data reset.");
+
+location.reload();
+
+}
+
+document.getElementById(
+"mainSelect"
+).addEventListener(
+"change",
+e=>{
+
+const val = e.target.value;
+
+if(val==="admin"){
+renderAdmin();
+}
+
+else if(val==="full"){
+renderFull();
+}
+
+else if(val==="data"){
+renderDataFeeder();
+}
+
+else{
+renderUT(val);
+}
+
+}
+);
+
+renderAdmin();
+
+</script>
+
+</body>
+</html>
