@@ -1,4 +1,4 @@
-<!-- ========================= NEET MASTER OS FINAL : PART 1 ========================= -->
+<!-- ========================= NEET MASTER OS : PART 1 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -833,7 +833,7 @@ let html = `
 <tr>
 <th>Task</th>
 <th>Done</th>
-<th>Completion</th>
+<th>Completion Time</th>
 </tr>
 `;
 
@@ -938,6 +938,29 @@ x=>`<li>${x}</li>`
 
 }
 
+function getChapterAccuracy(
+subject,
+chapter
+){
+
+const key =
+"accuracy_"+subject+"_"+chapter;
+
+const data =
+JSON.parse(
+localStorage.getItem(key)
+|| '{"attempted":0,"correct":0}'
+);
+
+if(data.attempted===0)
+return 0;
+
+return (
+(data.correct/data.attempted)*100
+).toFixed(1);
+
+}
+
 function renderAdmin(){
 
 let html = `
@@ -1021,6 +1044,49 @@ Next ➡
 </div>
 
 </div>
+
+<div class="card">
+
+<h2>Subject Completion</h2>
+
+<div class="stats-grid">
+
+<div class="stat-box">
+<h3>Physics</h3>
+<p id="phyPercent"></p>
+</div>
+
+<div class="stat-box">
+<h3>Chemistry</h3>
+<p id="chemPercent"></p>
+</div>
+
+<div class="stat-box">
+<h3>Biology</h3>
+<p id="bioPercent"></p>
+</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Weak Chapters</h2>
+
+<div id="weakList"></div>
+
+</div>
+
+<div class="card">
+
+<h2>Danger Zone</h2>
+
+<button onclick="resetAllData()">
+RESET EVERYTHING
+</button>
+
+</div>
 `;
 
 document.getElementById(
@@ -1030,6 +1096,108 @@ document.getElementById(
 updateProgress();
 
 renderCalendar();
+
+updateSubjectCompletion();
+
+showWeakChapters();
+
+}
+
+function updateSubjectCompletion(){
+
+for(let subject in allSubjects){
+
+let total = 0;
+let done = 0;
+
+allSubjects[subject]
+.forEach(ch=>{
+
+getTasks(subject)
+.forEach(task=>{
+
+total++;
+
+if(localStorage.getItem(
+getKey(subject,ch,task)
+)){
+done++;
+}
+
+});
+
+});
+
+const percent =
+((done/total)*100)
+.toFixed(1);
+
+if(subject==="Physics"){
+document.getElementById(
+"phyPercent"
+).innerText =
+percent+"%";
+}
+
+if(subject==="Chemistry"){
+document.getElementById(
+"chemPercent"
+).innerText =
+percent+"%";
+}
+
+if(subject==="Biology"){
+document.getElementById(
+"bioPercent"
+).innerText =
+percent+"%";
+}
+
+}
+
+}
+
+function showWeakChapters(){
+
+let html = "";
+
+for(let subject in allSubjects){
+
+html += `
+<h3 class="subject-title">
+${subject}
+</h3>
+<ul>
+`;
+
+allSubjects[subject]
+.forEach(ch=>{
+
+const acc =
+getChapterAccuracy(
+subject,
+ch
+);
+
+if(acc<80 && acc>0){
+
+html += `
+<li class="red">
+${ch} → ${acc}%
+</li>
+`;
+
+}
+
+});
+
+html += `</ul>`;
+
+}
+
+document.getElementById(
+"weakList"
+).innerHTML = html;
 
 }
 
@@ -1056,14 +1224,14 @@ onchange="loadChapters()">
 
 <select id="feedChapter"></select>
 
-<label>Attempted</label>
+<label>Attempted Questions</label>
 
 <input
 type="number"
 id="attempted"
 >
 
-<label>Correct</label>
+<label>Correct Questions</label>
 
 <input
 type="number"
