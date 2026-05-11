@@ -1,9 +1,13 @@
-<!-- ========================= PART 1 / 2 ========================= -->
+<!-- ========================= NEET MASTER OS FINAL CLOUD SYNC : PART 1 / 10 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>NEET MASTER OS</title>
 
@@ -15,136 +19,259 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+background:#020617;
+}
+
 body{
+
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a,#111827);
+
+background:
+linear-gradient(
+180deg,
+#020617 0%,
+#0f172a 45%,
+#111827 100%
+);
+
 color:white;
-padding:20px;
+
+padding:12px;
+
 min-height:100vh;
+
+max-width:520px;
+
+margin:auto;
+
+overflow-x:hidden;
+
 }
 
 h1{
-font-size:38px;
+
+font-size:30px;
+
 text-align:center;
-margin-bottom:20px;
-background:linear-gradient(to right,#38bdf8,#22c55e);
+
+margin-bottom:16px;
+
+background:
+linear-gradient(
+to right,
+#38bdf8,
+#22c55e
+);
+
 -webkit-background-clip:text;
+
 -webkit-text-fill-color:transparent;
+
 }
 
 h2{
+font-size:22px;
 margin-bottom:10px;
 color:#38bdf8;
 }
 
 h3{
+font-size:18px;
 margin-top:10px;
 margin-bottom:10px;
 }
 
 .card{
-background:rgba(30,41,59,0.7);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.1);
-padding:20px;
-border-radius:20px;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
 
-select,input{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-background:#0f172a;
-color:white;
-margin-top:8px;
-margin-bottom:10px;
-}
+background:
+rgba(30,41,59,0.82);
 
-button{
-padding:12px 18px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-weight:bold;
-background:linear-gradient(to right,#38bdf8,#22c55e);
-color:black;
-margin-top:10px;
-transition:0.3s;
-}
+padding:14px;
 
-button:hover{
-transform:scale(1.03);
-}
+border-radius:18px;
 
-.progress-container{
-width:100%;
-height:28px;
-background:#0f172a;
-border-radius:20px;
-overflow:hidden;
-margin-top:10px;
-}
+margin-bottom:14px;
 
-#progressBar{
-height:100%;
-width:0%;
-background:linear-gradient(to right,#22c55e,#38bdf8);
-transition:0.5s;
+border:
+1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 0 15px rgba(0,0,0,0.25);
+
 }
 
 .chapter{
-background:#111827;
-padding:15px;
-border-radius:15px;
-margin-top:15px;
+
+background:
+linear-gradient(
+145deg,
+#0f172a,
+#111827
+);
+
+padding:12px;
+
+border-radius:14px;
+
+margin-top:12px;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+}
+
+.subject-title{
+margin-top:18px;
+font-size:20px;
+color:#22c55e;
+}
+
+select,input{
+
+width:100%;
+
+padding:10px;
+
+border:none;
+
+border-radius:10px;
+
+background:#020617;
+
+color:white;
+
+margin-top:6px;
+margin-bottom:8px;
+
+border:
+1px solid rgba(255,255,255,0.06);
+
+font-size:14px;
+
+outline:none;
+
+}
+
+button{
+
+padding:10px 14px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+to right,
+#38bdf8,
+#22c55e
+);
+
+color:black;
+
+margin-top:8px;
+
+font-size:14px;
+
+transition:0.3s;
+
+}
+
+button:hover{
+transform:scale(1.02);
+}
+
+.progress-container{
+
+width:100%;
+
+height:24px;
+
+background:#020617;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:10px;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+}
+
+#progressBar{
+
+height:100%;
+
+width:0%;
+
+background:
+linear-gradient(
+90deg,
+#22c55e,
+#38bdf8
+);
+
+transition:0.4s;
+
 }
 
 table{
 width:100%;
 border-collapse:collapse;
 margin-top:10px;
+font-size:12px;
 }
 
 th,td{
 border:1px solid #334155;
-padding:10px;
+padding:6px;
+}
+
+th{
+background:#0f172a;
 }
 
 input[type="checkbox"]{
-transform:scale(1.3);
+transform:scale(1.2);
 width:auto;
-}
-
-.subject-title{
-margin-top:25px;
-font-size:24px;
-color:#22c55e;
-}
-
-ul{
-padding-left:20px;
-margin-top:10px;
-}
-
-li{
-margin-bottom:6px;
+accent-color:#22c55e;
 }
 
 .stats-grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-top:15px;
+
+grid-template-columns:
+repeat(auto-fit,minmax(120px,1fr));
+
+gap:10px;
+
+margin-top:10px;
+
 }
 
 .stat-box{
+
 background:#111827;
-padding:20px;
-border-radius:15px;
+
+padding:12px;
+
+border-radius:14px;
+
 text-align:center;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
 }
 
 .red{
@@ -159,7 +286,33 @@ color:#22c55e;
 color:#eab308;
 }
 
+ul{
+padding-left:20px;
+margin-top:8px;
+}
+
+li{
+margin-bottom:6px;
+}
+
+@media(max-width:600px){
+
+table{
+font-size:11px;
+}
+
+th,td{
+padding:5px;
+}
+
+h1{
+font-size:26px;
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
@@ -168,9 +321,17 @@ color:#eab308;
 
 <select id="mainSelect">
 
-<option value="admin">ADMIN PANEL</option>
-<option value="full">FULL SYLLABUS PROGRESS</option>
-<option value="data">DATA FEEDER</option>
+<option value="admin">
+ADMIN PANEL
+</option>
+
+<option value="full">
+FULL SYLLABUS PROGRESS
+</option>
+
+<option value="data">
+DATA FEEDER
+</option>
 
 <option value="ut1">UNIT TEST 1</option>
 <option value="ut2">UNIT TEST 2</option>
@@ -215,8 +376,8 @@ const biologyTasks = [
 ];
 
 const allSubjects = {
-
 Physics:[
+
 "Basic Maths+ Vectors",
 "Units and measurements",
 "Kinematics",
@@ -248,9 +409,11 @@ Physics:[
 "Nuclei",
 "Semiconductor electronics",
 "Practical Physics"
+
 ],
 
 Chemistry:[
+
 "Some Basic Concepts of Chemistry",
 "Structure of Atom",
 "Periodic Table",
@@ -276,9 +439,11 @@ Chemistry:[
 "Amines",
 "Biomolecules",
 "Practical Chemistry"
+
 ],
 
 Biology:[
+
 "The Living World",
 "Biological Classification",
 "Plant Kingdom",
@@ -313,6 +478,7 @@ Biology:[
 "Biodiversity and Conservation",
 "Environmental Issues",
 "Practical Biology"
+
 ]
 
 };
@@ -403,6 +569,7 @@ Biology:[
 ]
 }
 },
+
 ut5:{
 title:"UNIT TEST 5",
 date:"10 July 2026",
@@ -422,7 +589,6 @@ Biology:[
 ]
 }
 },
-
 ut6:{
 title:"UNIT TEST 6 + REVIEW TEST 2",
 date:"20 July 2026",
@@ -535,15 +701,28 @@ Biology:[
 
 };
 
+let currentDate =
+new Date();
+
 function getTasks(subject){
 
-if(subject==="Physics") return physicsTasks;
-if(subject==="Chemistry") return chemistryTasks;
+if(subject==="Physics"){
+return physicsTasks;
+}
+
+if(subject==="Chemistry"){
+return chemistryTasks;
+}
+
 return biologyTasks;
 
 }
 
-function getKey(subject,chapter,task){
+function getKey(
+subject,
+chapter,
+task
+){
 
 return `${subject}_${chapter}_${task}`;
 
@@ -556,15 +735,19 @@ let done = 0;
 
 for(let subject in allSubjects){
 
-allSubjects[subject].forEach(ch=>{
+allSubjects[subject]
+.forEach(ch=>{
 
-getTasks(subject).forEach(task=>{
+getTasks(subject)
+.forEach(task=>{
 
 total++;
 
-if(localStorage.getItem(
+if(
+localStorage.getItem(
 getKey(subject,ch,task)
-)){
+)
+){
 done++;
 }
 
@@ -574,58 +757,304 @@ done++;
 
 }
 
-let percent = ((done/total)*100).toFixed(2);
+const percent =
+((done/total)*100)
+.toFixed(2);
 
-const bar = document.getElementById("progressBar");
+const bar =
+document.getElementById(
+"progressBar"
+);
 
 if(bar){
-bar.style.width = percent+"%";
+
+bar.style.width =
+percent + "%";
+
 }
 
-const text = document.getElementById("progressText");
+const text =
+document.getElementById(
+"progressText"
+);
 
 if(text){
-text.innerText = percent+"% Completed";
+
+text.innerText =
+percent + "% Completed";
+
+}
+
+}
+
+function changeDay(num){
+
+currentDate.setDate(
+currentDate.getDate()+num
+);
+
+renderCalendar();
+
+}
+
+function getChapterAccuracy(
+subject,
+chapter
+){
+
+const key =
+"accuracy_"+
+subject+
+"_"+
+chapter;
+
+const data =
+JSON.parse(
+localStorage.getItem(key)
+||
+'{"attempted":0,"correct":0}'
+);
+
+if(data.attempted===0){
+
+return 0;
+
+}
+
+return (
+(data.correct/data.attempted)
+*100
+).toFixed(1);
+
+}
+async function saveTaskToCloud(
+subject,
+chapter,
+task,
+value,
+date
+){
+
+if(!window.db) return;
+
+const id =
+subject + "_" +
+chapter + "_" +
+task;
+
+try{
+
+await setDoc(
+doc(db,"tasks",id),
+{
+subject,
+chapter,
+task,
+done:value,
+date
+}
+);
+
+}catch(error){
+
+console.log(
+"Cloud save failed"
+);
+
 }
 
 }
 
-function fillDateTime(cb,subject,chapter,task){
+async function loadCloudData(){
 
-const row = cb.parentElement.parentElement;
+if(!window.db) return;
+
+try{
+
+const querySnapshot =
+await getDocs(
+collection(db,"tasks")
+);
+
+querySnapshot.forEach(
+(documentData)=>{
+
+const data =
+documentData.data();
+
+const key =
+getKey(
+data.subject,
+data.chapter,
+data.task
+);
+
+if(data.done){
+
+localStorage.setItem(
+key,
+"done"
+);
+
+localStorage.setItem(
+key+"_date",
+data.date
+);
+
+}else{
+
+localStorage.removeItem(
+key
+);
+
+localStorage.removeItem(
+key+"_date"
+);
+
+}
+
+});
+
+updateProgress();
+
+renderAdmin();
+
+}catch(error){
+
+console.log(
+"Cloud load failed"
+);
+
+}
+
+}
+
+function startRealtimeSync(){
+
+if(!window.db) return;
+
+onSnapshot(
+collection(db,"tasks"),
+
+(snapshot)=>{
+
+snapshot.forEach(
+(documentData)=>{
+
+const data =
+documentData.data();
+
+const key =
+getKey(
+data.subject,
+data.chapter,
+data.task
+);
+
+if(data.done){
+
+localStorage.setItem(
+key,
+"done"
+);
+
+localStorage.setItem(
+key+"_date",
+data.date
+);
+
+}else{
+
+localStorage.removeItem(
+key
+);
+
+localStorage.removeItem(
+key+"_date"
+);
+
+}
+
+});
+
+refreshCurrentPage();
+
+});
+
+}
+
+function fillDateTime(
+cb,
+subject,
+chapter,
+task
+){
+
+const row =
+cb.parentElement
+.parentElement;
 
 const input =
-row.querySelector(".dateField");
+row.querySelector(
+".dateField"
+);
 
-const key = getKey(subject,chapter,task);
+const key =
+getKey(
+subject,
+chapter,
+task
+);
 
 const today =
-new Date().toISOString().split('T')[0];
+new Date()
+.toISOString()
+.split('T')[0];
 
 const calendarKey =
 today + "_" + subject;
 
 const text =
-chapter + " → " + task;
+chapter +
+" → " +
+task;
 
 if(cb.checked){
 
-const now = new Date();
+const now =
+new Date();
 
 const formatted =
 now.toLocaleDateString()
 +" "+
 now.toLocaleTimeString();
 
-input.value = formatted;
+input.value =
+formatted;
 
-localStorage.setItem(key,"done");
-localStorage.setItem(key+"_date",formatted);
+localStorage.setItem(
+key,
+"done"
+);
+
+localStorage.setItem(
+key+"_date",
+formatted
+);
+
+saveTaskToCloud(
+subject,
+chapter,
+task,
+true,
+formatted
+);
 
 let arr =
 JSON.parse(
-localStorage.getItem(calendarKey)
-|| "[]"
+localStorage.getItem(
+calendarKey
+) || "[]"
 );
 
 if(!arr.includes(text)){
@@ -641,15 +1070,29 @@ JSON.stringify(arr)
 
 }else{
 
-input.value="";
+input.value = "";
 
-localStorage.removeItem(key);
-localStorage.removeItem(key+"_date");
+localStorage.removeItem(
+key
+);
+
+localStorage.removeItem(
+key+"_date"
+);
+
+saveTaskToCloud(
+subject,
+chapter,
+task,
+false,
+""
+);
 
 let arr =
 JSON.parse(
-localStorage.getItem(calendarKey)
-|| "[]"
+localStorage.getItem(
+calendarKey
+) || "[]"
 );
 
 arr = arr.filter(
@@ -667,9 +1110,13 @@ updateProgress();
 
 renderCalendar();
 
-}
+updateSubjectCompletion();
 
-function createTable(subject,chapter){
+}
+function createTable(
+subject,
+chapter
+){
 
 let html = `
 <table>
@@ -681,9 +1128,15 @@ let html = `
 </tr>
 `;
 
-getTasks(subject).forEach(task=>{
+getTasks(subject)
+.forEach(task=>{
 
-const key = getKey(subject,chapter,task);
+const key =
+getKey(
+subject,
+chapter,
+task
+);
 
 const checked =
 localStorage.getItem(key)
@@ -691,10 +1144,12 @@ localStorage.getItem(key)
 : "";
 
 const savedDate =
-localStorage.getItem(key+"_date")
-|| "";
+localStorage.getItem(
+key+"_date"
+) || "";
 
 html += `
+
 <tr>
 
 <td>${task}</td>
@@ -704,6 +1159,7 @@ html += `
 <input
 type="checkbox"
 ${checked}
+
 onchange="
 fillDateTime(
 this,
@@ -736,94 +1192,41 @@ return html;
 
 }
 
-function saveCalendarLog(subject,chapter,task){
-
-const today =
-new Date().toISOString().split('T')[0];
-
-const key =
-today+"_"+subject;
-
-let arr =
-JSON.parse(
-localStorage.getItem(key)
-|| "[]"
-);
-
-const text =
-chapter+" → "+task;
-
-if(!arr.includes(text)){
-
-arr.push(text);
-
-localStorage.setItem(
-key,
-JSON.stringify(arr)
-);
-
-}
-
-}
-
-let currentDate = new Date();
-
-function changeDay(num){
-
-currentDate.setDate(
-currentDate.getDate()+num
-);
-
-renderCalendar();
-
-}
-
 function renderCalendar(){
 
 const d =
-currentDate.toISOString().split('T')[0];
+currentDate
+.toISOString()
+.split('T')[0];
 
 document.getElementById(
 "calendarDate"
 ).innerText =
 currentDate.toDateString();
 
-["Physics","Chemistry","Biology"]
+[
+"Physics",
+"Chemistry",
+"Biology"
+]
 .forEach(sub=>{
 
 const data =
 JSON.parse(
-localStorage.getItem(d+"_"+sub)
-|| "[]"
+localStorage.getItem(
+d + "_" + sub
+) || "[]"
 );
 
 document.getElementById(
-sub+"Log"
+sub + "Log"
 ).innerHTML =
+
 data.map(
 x=>`<li>${x}</li>`
 ).join("");
 
 });
-
-}
-
-function getChapterAccuracy(subject,chapter){
-
-const key =
-"accuracy_"+subject+"_"+chapter;
-
-const data =
-JSON.parse(
-localStorage.getItem(key)
-|| '{"attempted":0,"correct":0}'
-);
-
-if(data.attempted===0) return 0;
-
-return (
-(data.correct/data.attempted)*100
-).toFixed(1);
 
 }
 
@@ -836,18 +1239,35 @@ let html = `
 <h2>Daily Routine</h2>
 
 <ul>
-<li>7:00 - 9:30 → Test</li>
-<li>10:30 - 2:30 → Physics</li>
-<li>5:00 - 8:00 → Chemistry</li>
-<li>9:00 - 12:00 → Biology</li>
+
+<li>
+7:00 - 9:30 → Test
+</li>
+
+<li>
+10:30 - 2:30 → Physics
+</li>
+
+<li>
+5:00 - 8:00 → Chemistry
+</li>
+
+<li>
+9:00 - 12:00 → Biology
+</li>
+
 </ul>
 
-<h3>Total Study Hours = 12.5 hrs/day</h3>
+<h3>
+12.5 hrs/day
+</h3>
 
 <h2>Overall Progress</h2>
 
 <div class="progress-container">
+
 <div id="progressBar"></div>
+
 </div>
 
 <h3 id="progressText">
@@ -861,28 +1281,37 @@ let html = `
 <h2>Study Calendar</h2>
 
 <button onclick="changeDay(-1)">
-⬅ Previous Day
+⬅ Previous
 </button>
 
 <button onclick="changeDay(1)">
-Next Day ➡
+Next ➡
 </button>
 
 <h3 id="calendarDate"></h3>
 
 <div class="chapter">
+
 <h3>Physics</h3>
+
 <ul id="PhysicsLog"></ul>
+
 </div>
 
 <div class="chapter">
+
 <h3>Chemistry</h3>
+
 <ul id="ChemistryLog"></ul>
+
 </div>
 
 <div class="chapter">
+
 <h3>Biology</h3>
+
 <ul id="BiologyLog"></ul>
+
 </div>
 
 </div>
@@ -894,18 +1323,27 @@ Next Day ➡
 <div class="stats-grid">
 
 <div class="stat-box">
+
 <h3>Physics</h3>
+
 <p id="phyPercent"></p>
+
 </div>
 
 <div class="stat-box">
+
 <h3>Chemistry</h3>
+
 <p id="chemPercent"></p>
+
 </div>
 
 <div class="stat-box">
+
 <h3>Biology</h3>
+
 <p id="bioPercent"></p>
+
 </div>
 
 </div>
@@ -914,7 +1352,7 @@ Next Day ➡
 
 <div class="card">
 
-<h2>Weak Chapters (&lt;80%)</h2>
+<h2>Weak Chapters</h2>
 
 <div id="weakList"></div>
 
@@ -944,24 +1382,26 @@ updateSubjectCompletion();
 showWeakChapters();
 
 }
-
 function updateSubjectCompletion(){
 
 for(let subject in allSubjects){
 
-let total=0;
-let done=0;
+let total = 0;
+let done = 0;
 
-allSubjects[subject].forEach(ch=>{
+allSubjects[subject]
+.forEach(ch=>{
 
 getTasks(subject)
 .forEach(task=>{
 
 total++;
 
-if(localStorage.getItem(
+if(
+localStorage.getItem(
 getKey(subject,ch,task)
-)){
+)
+){
 done++;
 }
 
@@ -969,29 +1409,35 @@ done++;
 
 });
 
-let percent =
+const percent =
 ((done/total)*100)
 .toFixed(1);
 
 if(subject==="Physics"){
+
 document.getElementById(
 "phyPercent"
 ).innerText =
-percent+"%";
+percent + "%";
+
 }
 
 if(subject==="Chemistry"){
+
 document.getElementById(
 "chemPercent"
 ).innerText =
-percent+"%";
+percent + "%";
+
 }
 
 if(subject==="Biology"){
+
 document.getElementById(
 "bioPercent"
 ).innerText =
-percent+"%";
+percent + "%";
+
 }
 
 }
@@ -1011,12 +1457,16 @@ ${subject}
 <ul>
 `;
 
-allSubjects[subject].forEach(ch=>{
+allSubjects[subject]
+.forEach(ch=>{
 
 const acc =
-getChapterAccuracy(subject,ch);
+getChapterAccuracy(
+subject,
+ch
+);
 
-if(acc<80 && acc>0){
+if(acc < 80 && acc > 0){
 
 html += `
 <li class="red">
@@ -1061,12 +1511,11 @@ onchange="loadChapters()">
 
 <select id="feedChapter"></select>
 
-<label>Total Questions Attempted</label>
+<label>Attempted Questions</label>
 
 <input
 type="number"
 id="attempted"
-placeholder="Enter Attempted Questions"
 >
 
 <label>Correct Questions</label>
@@ -1074,7 +1523,6 @@ placeholder="Enter Attempted Questions"
 <input
 type="number"
 id="correct"
-placeholder="Enter Correct Questions"
 >
 
 <button onclick="saveAccuracy()">
@@ -1108,7 +1556,8 @@ document.getElementById(
 
 chapterSelect.innerHTML = "";
 
-allSubjects[sub].forEach(ch=>{
+allSubjects[sub]
+.forEach(ch=>{
 
 chapterSelect.innerHTML += `
 <option>${ch}</option>
@@ -1144,21 +1593,31 @@ document.getElementById(
 ).value
 );
 
-const accuracy =
+let accuracy = 0;
+
+if(attempted > 0){
+
+accuracy =
 ((correct/attempted)*100)
 .toFixed(1);
 
+}
+
 localStorage.setItem(
 "accuracy_"+sub+"_"+ch,
+
 JSON.stringify({
 attempted,
 correct
 })
+
 );
 
 document.getElementById(
 "accuracyResult"
-).innerHTML = `
+).innerHTML =
+
+`
 <h3 class="
 ${accuracy>=80
 ? 'green'
@@ -1172,13 +1631,14 @@ ${accuracy}%
 `;
 
 }
-
 function renderFull(){
 
 let html = `
 <div class="card">
 
-<h2>FULL SYLLABUS PROGRESS</h2>
+<h2>
+FULL SYLLABUS PROGRESS
+</h2>
 `;
 
 for(let subject in allSubjects){
@@ -1263,26 +1723,91 @@ function resetAllData(){
 
 const first =
 confirm(
-"Are you sure you want to reset everything?"
+"Are you sure you want to reset all data?"
 );
 
 if(!first) return;
 
 const second =
 confirm(
-"This will permanently delete ALL data. Continue?"
+"This will permanently delete everything. Continue?"
 );
 
 if(!second) return;
 
 localStorage.clear();
 
-alert("All data reset.");
+alert(
+"All data reset successfully."
+);
 
 location.reload();
 
 }
 
+function renderStartupLoader(){
+
+document.getElementById(
+"content"
+).innerHTML =
+
+`
+<div class="card">
+
+<h2>
+Loading Cloud Data...
+</h2>
+
+<div class="progress-container">
+
+<div
+id="progressBar"
+style="width:100%"
+></div>
+
+</div>
+
+<h3>
+Syncing your study data
+</h3>
+
+</div>
+`;
+
+}
+
+function refreshCurrentPage(){
+
+const val =
+document.getElementById(
+"mainSelect"
+).value;
+
+if(val==="admin"){
+
+renderAdmin();
+
+}
+
+else if(val==="full"){
+
+renderFull();
+
+}
+
+else if(val==="data"){
+
+renderDataFeeder();
+
+}
+
+else{
+
+renderUT(val);
+
+}
+
+}
 document.getElementById(
 "mainSelect"
 ).addEventListener(
@@ -1292,27 +1817,175 @@ e=>{
 const val = e.target.value;
 
 if(val==="admin"){
+
 renderAdmin();
+
 }
 
 else if(val==="full"){
+
 renderFull();
+
 }
 
 else if(val==="data"){
+
 renderDataFeeder();
+
 }
 
 else{
+
 renderUT(val);
+
 }
 
 }
 );
 
-renderAdmin();
+renderStartupLoader();
 
 </script>
 
+<!-- ================= FIREBASE ================= -->
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+doc,
+setDoc,
+getDocs,
+collection,
+onSnapshot
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBtk0nsRD0Ixoy9kfcXrNIK6d7_BbHjJTE",
+  authDomain: "neet-master-os.firebaseapp.com",
+  projectId: "neet-master-os",
+  storageBucket:"neet-master-os.appspot.com",
+  messagingSenderId: "323161709642",
+  appId: "1:323161709642:web:f5e9215e7ddba56b495ab3",
+  measurementId: "G-5VNLBQSW2F"
+};
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+window.db = db;
+
+window.doc = doc;
+
+window.setDoc = setDoc;
+
+window.getDocs = getDocs;
+
+window.collection = collection;
+
+window.onSnapshot = onSnapshot;
+
+window.firebaseReady = true;
+
+async function startApp(){
+
+await loadCloudData();
+
+startRealtimeSync();
+
+refreshCurrentPage();
+
+}
+
+startApp();
+window.addEventListener(
+"online",
+()=>{
+
+console.log(
+"Internet Connected"
+);
+
+if(window.firebaseReady){
+
+loadCloudData();
+
+}
+
+}
+);
+
+window.addEventListener(
+"offline",
+()=>{
+
+console.log(
+"Offline Mode Enabled"
+);
+
+}
+);
+
+window.addEventListener(
+"storage",
+()=>{
+
+updateProgress();
+
+updateSubjectCompletion();
+
+}
+);
+
+setInterval(()=>{
+
+updateProgress();
+
+},3000);
+
+setInterval(()=>{
+
+if(
+document.getElementById(
+"calendarDate"
+)
+){
+
+renderCalendar();
+
+}
+
+},5000);
+
+console.log(
+"NEET MASTER OS STARTED"
+);
+
+console.log(
+"Realtime Sync Enabled"
+);
+
+console.log(
+"Cloud Sync Enabled"
+);
+
+console.log(
+"Offline Backup Enabled"
+);
+</script>
+
 </body>
+
 </html>
