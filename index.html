@@ -1000,11 +1000,9 @@ collection(db,"tasks"),
 
 (snapshot)=>{
 
-snapshot.forEach(
-(documentData)=>{
+snapshot.docChanges().forEach((change)=>{
 
-const data =
-documentData.data();
+const data = change.doc.data();
 
 const key =
 getKey(
@@ -1012,6 +1010,60 @@ data.subject,
 data.chapter,
 data.task
 );
+
+const calendarKey =
+(
+data.calendarDate ||
+new Date()
+.toISOString()
+.split('T')[0]
+)
++
+"_" +
+data.subject;
+
+const text =
+data.chapter +
+" → " +
+data.task;
+
+// ================= DELETE =================
+if(change.type === "removed"){
+
+localStorage.removeItem(key);
+
+localStorage.removeItem(key+"_date");
+
+let arr =
+JSON.parse(
+localStorage.getItem(calendarKey)
+|| "[]"
+);
+
+arr = arr.filter(
+item => item !== text
+);
+
+localStorage.setItem(
+calendarKey,
+JSON.stringify(arr)
+);
+
+// FULL RESET ACROSS ALL DEVICES
+if(snapshot.empty){
+
+localStorage.clear();
+
+sessionStorage.clear();
+
+renderAdmin();
+
+}
+
+}
+
+// ================= ADD / MODIFY =================
+else{
 
 if(data.done){
 
@@ -1024,27 +1076,12 @@ localStorage.setItem(
 key+"_date",
 data.date
 );
-const calendarKey =
-(
-data.calendarDate ||
-new Date()
-.toISOString()
-.split('T')[0]
-)
-+
-"_" +
-data.subject;
 
 let arr =
 JSON.parse(
 localStorage.getItem(calendarKey)
 || "[]"
 );
-
-const text =
-data.chapter +
-" → " +
-data.task;
 
 if(!arr.includes(text)){
 
@@ -1056,36 +1093,18 @@ JSON.stringify(arr)
 );
 
 }
+
 }else{
 
-localStorage.removeItem(
-key
-);
+localStorage.removeItem(key);
 
-localStorage.removeItem(
-key+"_date"
-);
-const calendarKey =
-(
-data.calendarDate ||
-new Date()
-.toISOString()
-.split('T')[0]
-)
-+
-"_" +
-data.subject;
+localStorage.removeItem(key+"_date");
 
 let arr =
 JSON.parse(
 localStorage.getItem(calendarKey)
 || "[]"
 );
-
-const text =
-data.chapter +
-" → " +
-data.task;
 
 arr = arr.filter(
 item => item !== text
@@ -1095,9 +1114,16 @@ localStorage.setItem(
 calendarKey,
 JSON.stringify(arr)
 );
+
+}
+
 }
 
 });
+
+updateProgress();
+
+updateSubjectCompletion();
 
 refreshCurrentPage();
 
