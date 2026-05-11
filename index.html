@@ -1,9 +1,13 @@
-<!-- ========================= NEET MASTER OS CLOUD VERSION : PART 1 ========================= -->
+<!-- ========================= NEET MASTER OS FINAL : PART 1 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>NEET MASTER OS</title>
 
@@ -20,6 +24,7 @@ background:#020617;
 }
 
 body{
+
 font-family:Arial,sans-serif;
 
 background:
@@ -36,20 +41,20 @@ padding:12px;
 
 min-height:100vh;
 
-max-width:500px;
+max-width:520px;
 
 margin:auto;
 
 overflow-x:hidden;
-}
 
-#content{
-background:transparent;
 }
 
 h1{
-font-size:28px;
+
+font-size:30px;
+
 text-align:center;
+
 margin-bottom:16px;
 
 background:
@@ -60,30 +65,15 @@ to right,
 );
 
 -webkit-background-clip:text;
+
 -webkit-text-fill-color:transparent;
-}
 
-h2{
-margin-bottom:10px;
-color:#38bdf8;
-font-size:22px;
-}
-
-h3{
-margin-top:10px;
-margin-bottom:10px;
-font-size:18px;
 }
 
 .card{
 
 background:
-rgba(30,41,59,0.78);
-
-backdrop-filter:blur(12px);
-
-border:
-1px solid rgba(255,255,255,0.08);
+rgba(30,41,59,0.82);
 
 padding:14px;
 
@@ -91,8 +81,10 @@ border-radius:18px;
 
 margin-bottom:14px;
 
-box-shadow:
-0 0 15px rgba(0,0,0,0.25);
+border:
+1px solid rgba(255,255,255,0.08);
+
+backdrop-filter:blur(12px);
 
 }
 
@@ -105,11 +97,11 @@ linear-gradient(
 #111827
 );
 
-padding:14px;
+padding:12px;
 
 border-radius:14px;
 
-margin-top:14px;
+margin-top:12px;
 
 border:
 1px solid rgba(255,255,255,0.05);
@@ -139,10 +131,6 @@ color:white;
 margin-top:6px;
 margin-bottom:8px;
 
-font-size:14px;
-
-outline:none;
-
 border:
 1px solid rgba(255,255,255,0.06);
 
@@ -171,21 +159,13 @@ color:black;
 
 margin-top:8px;
 
-font-size:14px;
-
-transition:0.3s;
-
-}
-
-button:hover{
-transform:scale(1.02);
 }
 
 .progress-container{
 
 width:100%;
 
-height:22px;
+height:24px;
 
 background:#020617;
 
@@ -195,22 +175,13 @@ overflow:hidden;
 
 margin-top:10px;
 
-display:flex;
-
-align-items:center;
-
-border:
-1px solid rgba(255,255,255,0.05);
-
 }
 
 #progressBar{
 
-height:22px;
+height:100%;
 
 width:0%;
-
-border-radius:20px;
 
 background:
 linear-gradient(
@@ -219,42 +190,7 @@ linear-gradient(
 #38bdf8
 );
 
-transition:width 0.5s ease;
-
-display:block;
-
-}
-
-.stats-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(120px,1fr));
-
-gap:10px;
-
-margin-top:10px;
-
-}
-
-.stat-box{
-
-background:
-linear-gradient(
-145deg,
-#0f172a,
-#111827
-);
-
-padding:12px;
-
-border-radius:14px;
-
-text-align:center;
-
-border:
-1px solid rgba(255,255,255,0.05);
+transition:0.4s;
 
 }
 
@@ -280,13 +216,29 @@ width:auto;
 accent-color:#22c55e;
 }
 
-ul{
-padding-left:20px;
-margin-top:8px;
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(120px,1fr));
+
+gap:10px;
+
+margin-top:10px;
+
 }
 
-li{
-margin-bottom:5px;
+.stat-box{
+
+background:#111827;
+
+padding:12px;
+
+border-radius:14px;
+
+text-align:center;
+
 }
 
 .red{
@@ -297,23 +249,8 @@ color:#ef4444;
 color:#22c55e;
 }
 
-.yellow{
-color:#eab308;
-}
-
-@media(max-width:600px){
-
-table{
-font-size:11px;
-}
-
-th,td{
-padding:5px;
-}
-
-}
-
 </style>
+
 </head>
 
 <body>
@@ -337,13 +274,13 @@ DATA FEEDER
 <option value="ut1">UNIT TEST 1</option>
 <option value="ut2">UNIT TEST 2</option>
 <option value="ut3">UNIT TEST 3</option>
-<option value="ut4">UNIT TEST 4 + REVIEW TEST 1</option>
+<option value="ut4">UNIT TEST 4 + RT 1</option>
 <option value="ut5">UNIT TEST 5</option>
-<option value="ut6">UNIT TEST 6 + REVIEW TEST 2</option>
+<option value="ut6">UNIT TEST 6 + RT 2</option>
 <option value="ut7">UNIT TEST 7</option>
 <option value="ut8">UNIT TEST 8</option>
-<option value="ut9">UNIT TEST 9 + REVIEW TEST 3</option>
-<option value="ut10">UNIT TEST 10 + REVIEW TEST 4</option>
+<option value="ut9">UNIT TEST 9 + RT 3</option>
+<option value="ut10">UNIT TEST 10 + RT 4</option>
 
 </select>
 
@@ -408,8 +345,7 @@ Physics:[
 "Dual nature of matter and radiation",
 "Atoms",
 "Nuclei",
-"Semiconductor electronics",
-"Practical Physics"
+"Semiconductor electronics"
 ],
 
 Chemistry:[
@@ -436,8 +372,7 @@ Chemistry:[
 "Alcohols, Phenols and Ethers",
 "Aldehydes, Ketones and Carboxylic Acids",
 "Amines",
-"Biomolecules",
-"Practical Chemistry"
+"Biomolecules"
 ],
 
 Biology:[
@@ -473,8 +408,7 @@ Biology:[
 "Organisms and Populations",
 "Ecosystem",
 "Biodiversity and Conservation",
-"Environmental Issues",
-"Practical Biology"
+"Environmental Issues"
 ]
 
 };
@@ -497,6 +431,200 @@ Biology:[
 "Biological Classification",
 "Plant Kingdom",
 "Animal Kingdom"
+]
+}
+},
+
+ut2:{
+title:"UNIT TEST 2",
+date:"10 June 2026",
+chapters:{
+Physics:[
+"Kinematics",
+"Current electricity"
+],
+Chemistry:[
+"Chemical Kinetics",
+"Chemical Equilibrium",
+"Ionic Equilibrium"
+],
+Biology:[
+"Sexual Reproduction in Flowering Plants",
+"Human Reproduction",
+"Reproductive Health"
+]
+}
+},
+
+ut3:{
+title:"UNIT TEST 3",
+date:"20 June 2026",
+chapters:{
+Physics:[
+"Laws of motion",
+"Electrostatic potential and capacitance"
+],
+Chemistry:[
+"Periodic Table",
+"Chemical Bonding and Molecular Structure"
+],
+Biology:[
+"Anatomy of Flowering Plants",
+"Morphology of Flowering Plants",
+"Structural Organisation in Animals",
+"Locomotion and Movement"
+]
+}
+},
+
+ut4:{
+title:"UNIT TEST 4 + REVIEW TEST 1",
+date:"30 June 2026",
+chapters:{
+Physics:[
+"Circular Motion",
+"Work, energy, and power",
+"Moving charges and magnetism",
+"Magnetism and matter"
+],
+Chemistry:[
+"Solutions",
+"Electrochemistry"
+],
+Biology:[
+"Principles of Inheritance and Variation",
+"Biotechnology – Principles and Processes",
+"Biotechnology and Its Applications"
+]
+}
+},
+
+ut5:{
+title:"UNIT TEST 5",
+date:"10 July 2026",
+chapters:{
+Physics:[
+"Centre of mass and collision",
+"Electromagnetic induction"
+],
+Chemistry:[
+"Thermodynamics",
+"Redox Reactions"
+],
+Biology:[
+"Molecular Basis of Inheritance",
+"Microbes in Human Welfare",
+"Evolution"
+]
+}
+},
+
+ut6:{
+title:"UNIT TEST 6 + REVIEW TEST 2",
+date:"20 July 2026",
+chapters:{
+Physics:[
+"System of particles and rotational motion",
+"Alternating current",
+"Electromagnetic waves"
+],
+Chemistry:[
+"P-Block Elements",
+"The d- and f-Block Elements",
+"Coordination Compounds"
+],
+Biology:[
+"Organisms and Populations",
+"Human Health and Diseases"
+]
+}
+},
+
+ut7:{
+title:"UNIT TEST 7",
+date:"30 July 2026",
+chapters:{
+Physics:[
+"Thermal properties of matter",
+"Thermodynamics",
+"Kinetic theory of gases",
+"Ray optics and optical instruments"
+],
+Chemistry:[
+"IUPAC",
+"Isomerism",
+"GOC",
+"Purification of Organic compounds"
+],
+Biology:[
+"Ecosystem",
+"Biodiversity and Conservation",
+"Chemical Coordination and Integration"
+]
+}
+},
+
+ut8:{
+title:"UNIT TEST 8",
+date:"10 August 2026",
+chapters:{
+Physics:[
+"Mechanical properties of solids",
+"Mechanical properties of fluids",
+"Wave optics"
+],
+Chemistry:[
+"Hydrocarbons",
+"Haloalkanes and Haloarenes"
+],
+Biology:[
+"Cell – The Unit of Life",
+"Cell Cycle and Cell Division",
+"Biomolecules",
+"Breathing and Exchange of Gases",
+"Body Fluids and Circulation"
+]
+}
+},
+
+ut9:{
+title:"UNIT TEST 9 + REVIEW TEST 3",
+date:"20 August 2026",
+chapters:{
+Physics:[
+"Gravitation",
+"Oscillations",
+"Dual nature of matter and radiation",
+"Atoms",
+"Nuclei"
+],
+Chemistry:[
+"Alcohols, Phenols and Ethers",
+"Aldehydes, Ketones and Carboxylic Acids"
+],
+Biology:[
+"Photosynthesis in Higher Plants",
+"Respiration in Plants",
+"Excretory Products and Their Elimination"
+]
+}
+},
+
+ut10:{
+title:"UNIT TEST 10 + REVIEW TEST 4",
+date:"30 August 2026",
+chapters:{
+Physics:[
+"Waves",
+"Semiconductor electronics"
+],
+Chemistry:[
+"Amines",
+"Biomolecules"
+],
+Biology:[
+"Plant Growth and Development",
+"Neural Control and Coordination"
 ]
 }
 }
@@ -639,7 +767,6 @@ task,
 true,
 formatted
 );
-
 let arr =
 JSON.parse(
 localStorage.getItem(calendarKey)
@@ -706,7 +833,7 @@ let html = `
 <tr>
 <th>Task</th>
 <th>Done</th>
-<th>Completion Time</th>
+<th>Completion</th>
 </tr>
 `;
 
@@ -811,29 +938,6 @@ x=>`<li>${x}</li>`
 
 }
 
-function getChapterAccuracy(
-subject,
-chapter
-){
-
-const key =
-"accuracy_"+subject+"_"+chapter;
-
-const data =
-JSON.parse(
-localStorage.getItem(key)
-|| '{"attempted":0,"correct":0}'
-);
-
-if(data.attempted===0)
-return 0;
-
-return (
-(data.correct/data.attempted)*100
-).toFixed(1);
-
-}
-
 function renderAdmin(){
 
 let html = `
@@ -843,14 +947,26 @@ let html = `
 <h2>Daily Routine</h2>
 
 <ul>
-<li>7:00 - 9:30 → Test</li>
-<li>10:30 - 2:30 → Physics</li>
-<li>5:00 - 8:00 → Chemistry</li>
-<li>9:00 - 12:00 → Biology</li>
+
+<li>
+7:00 - 9:30 → Test
+</li>
+
+<li>
+10:30 - 2:30 → Physics
+</li>
+
+<li>
+5:00 - 8:00 → Chemistry
+</li>
+
+<li>
+9:00 - 12:00 → Biology
+</li>
+
 </ul>
 
 <h3>
-Total Study Hours =
 12.5 hrs/day
 </h3>
 
@@ -881,62 +997,28 @@ Next ➡
 <h3 id="calendarDate"></h3>
 
 <div class="chapter">
+
 <h3>Physics</h3>
+
 <ul id="PhysicsLog"></ul>
+
 </div>
 
 <div class="chapter">
+
 <h3>Chemistry</h3>
+
 <ul id="ChemistryLog"></ul>
+
 </div>
 
 <div class="chapter">
+
 <h3>Biology</h3>
+
 <ul id="BiologyLog"></ul>
-</div>
 
 </div>
-
-<div class="card">
-
-<h2>Subject Completion</h2>
-
-<div class="stats-grid">
-
-<div class="stat-box">
-<h3>Physics</h3>
-<p id="phyPercent"></p>
-</div>
-
-<div class="stat-box">
-<h3>Chemistry</h3>
-<p id="chemPercent"></p>
-</div>
-
-<div class="stat-box">
-<h3>Biology</h3>
-<p id="bioPercent"></p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>Weak Chapters</h2>
-
-<div id="weakList"></div>
-
-</div>
-
-<div class="card">
-
-<h2>Danger Zone</h2>
-
-<button onclick="resetAllData()">
-RESET EVERYTHING
-</button>
 
 </div>
 `;
@@ -949,107 +1031,139 @@ updateProgress();
 
 renderCalendar();
 
-updateSubjectCompletion();
-
-showWeakChapters();
-
 }
 
-function updateSubjectCompletion(){
+function renderDataFeeder(){
 
-for(let subject in allSubjects){
+let html = `
 
-let total = 0;
-let done = 0;
+<div class="card">
 
-allSubjects[subject]
-.forEach(ch=>{
+<h2>DATA FEEDER</h2>
 
-getTasks(subject)
-.forEach(task=>{
+<label>Subject</label>
 
-total++;
+<select id="feedSubject"
+onchange="loadChapters()">
 
-if(localStorage.getItem(
-getKey(subject,ch,task)
-)){
-done++;
-}
+<option>Physics</option>
+<option>Chemistry</option>
+<option>Biology</option>
 
-});
+</select>
 
-});
+<label>Chapter</label>
 
-const percent =
-((done/total)*100)
-.toFixed(1);
+<select id="feedChapter"></select>
 
-if(subject==="Physics"){
-document.getElementById(
-"phyPercent"
-).innerText =
-percent+"%";
-}
+<label>Attempted</label>
 
-if(subject==="Chemistry"){
-document.getElementById(
-"chemPercent"
-).innerText =
-percent+"%";
-}
+<input
+type="number"
+id="attempted"
+>
 
-if(subject==="Biology"){
-document.getElementById(
-"bioPercent"
-).innerText =
-percent+"%";
-}
+<label>Correct</label>
 
-}
+<input
+type="number"
+id="correct"
+>
 
-}
+<button onclick="saveAccuracy()">
+SAVE DATA
+</button>
 
-function showWeakChapters(){
+<div id="accuracyResult"></div>
 
-let html = "";
-
-for(let subject in allSubjects){
-
-html += `
-<h3 class="subject-title">
-${subject}
-</h3>
-<ul>
+</div>
 `;
 
-allSubjects[subject]
-.forEach(ch=>{
+document.getElementById(
+"content"
+).innerHTML = html;
 
-const acc =
-getChapterAccuracy(
-subject,
-ch
+loadChapters();
+
+}
+
+function loadChapters(){
+
+const sub =
+document.getElementById(
+"feedSubject"
+).value;
+
+const chapterSelect =
+document.getElementById(
+"feedChapter"
 );
 
-if(acc<80 && acc>0){
+chapterSelect.innerHTML = "";
 
-html += `
-<li class="red">
-${ch} → ${acc}%
-</li>
+allSubjects[sub].forEach(ch=>{
+
+chapterSelect.innerHTML += `
+<option>${ch}</option>
 `;
-
-}
 
 });
 
-html += `</ul>`;
-
 }
 
+function saveAccuracy(){
+
+const sub =
 document.getElementById(
-"weakList"
-).innerHTML = html;
+"feedSubject"
+).value;
+
+const ch =
+document.getElementById(
+"feedChapter"
+).value;
+
+const attempted =
+Number(
+document.getElementById(
+"attempted"
+).value
+);
+
+const correct =
+Number(
+document.getElementById(
+"correct"
+).value
+);
+
+const accuracy =
+((correct/attempted)*100)
+.toFixed(1);
+
+localStorage.setItem(
+"accuracy_"+sub+"_"+ch,
+JSON.stringify({
+attempted,
+correct
+})
+);
+
+document.getElementById(
+"accuracyResult"
+).innerHTML =
+`
+<h3 class="
+${accuracy>=80
+? 'green'
+: 'red'}
+">
+
+Accuracy :
+${accuracy}%
+
+</h3>
+`;
 
 }
 
@@ -1174,15 +1288,27 @@ e=>{
 const val = e.target.value;
 
 if(val==="admin"){
+
 renderAdmin();
+
 }
 
 else if(val==="full"){
+
 renderFull();
+
+}
+
+else if(val==="data"){
+
+renderDataFeeder();
+
 }
 
 else{
+
 renderUT(val);
+
 }
 
 }
@@ -1210,8 +1336,8 @@ from
 
 const firebaseConfig = {
 
-apiKey: "PASTE_YOUR_KEY",
-authDomain: "PASTE_YOUR_DOMAIN",
+apiKey: "PASTE_YOUR_API_KEY",
+authDomain: "PASTE_YOUR_AUTH_DOMAIN",
 projectId: "PASTE_PROJECT_ID",
 storageBucket: "PASTE_BUCKET",
 messagingSenderId: "PASTE_MSG_ID",
