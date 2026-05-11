@@ -1000,6 +1000,26 @@ collection(db,"tasks"),
 
 (snapshot)=>{
 
+// ================= FULL RESET =================
+if(snapshot.empty){
+
+localStorage.clear();
+
+sessionStorage.clear();
+
+updateProgress();
+
+refreshCurrentPage();
+
+renderAdmin();
+
+console.log("All cloud data deleted");
+
+return;
+
+}
+
+// ================= NORMAL SYNC =================
 snapshot.docChanges().forEach((change)=>{
 
 const data = change.doc.data();
@@ -1027,7 +1047,7 @@ data.chapter +
 " → " +
 data.task;
 
-// ================= DELETE =================
+// DELETE
 if(change.type === "removed"){
 
 localStorage.removeItem(key);
@@ -1049,20 +1069,9 @@ calendarKey,
 JSON.stringify(arr)
 );
 
-// FULL RESET ACROSS ALL DEVICES
-if(snapshot.empty){
-
-localStorage.clear();
-
-sessionStorage.clear();
-
-renderAdmin();
-
 }
 
-}
-
-// ================= ADD / MODIFY =================
+// ADD / MODIFY
 else{
 
 if(data.done){
@@ -1941,9 +1950,6 @@ if(!second) return;
 
 try{
 
-// Clear local storage
-localStorage.clear();
-
 // DELETE all task documents
 const snapshot =
 await getDocs(
@@ -1971,7 +1977,7 @@ doc(db,"reportStatus",item.id)
 );
 
 }
-
+localStorage.clear();
 alert(
 "Everything deleted successfully."
 );
