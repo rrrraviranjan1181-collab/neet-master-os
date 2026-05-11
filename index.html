@@ -1,4 +1,4 @@
-<!-- ========================= PART 1 / 2 ========================= -->
+<!-- ========================= NEET MASTER OS CLOUD VERSION : PART 1 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +15,50 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+background:#020617;
+}
+
 body{
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a,#111827);
+
+background:
+linear-gradient(
+180deg,
+#020617 0%,
+#0f172a 45%,
+#111827 100%
+);
+
 color:white;
-padding:20px;
+
+padding:12px;
+
 min-height:100vh;
+
+max-width:500px;
+
+margin:auto;
+
+overflow-x:hidden;
+}
+
+#content{
+background:transparent;
 }
 
 h1{
-font-size:38px;
+font-size:28px;
 text-align:center;
-margin-bottom:20px;
-background:linear-gradient(to right,#38bdf8,#22c55e);
+margin-bottom:16px;
+
+background:
+linear-gradient(
+to right,
+#38bdf8,
+#22c55e
+);
+
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -35,116 +66,227 @@ background:linear-gradient(to right,#38bdf8,#22c55e);
 h2{
 margin-bottom:10px;
 color:#38bdf8;
+font-size:22px;
 }
 
 h3{
 margin-top:10px;
 margin-bottom:10px;
+font-size:18px;
 }
 
 .card{
-background:rgba(30,41,59,0.7);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.1);
-padding:20px;
-border-radius:20px;
-margin-bottom:20px;
-box-shadow:0 0 20px rgba(0,0,0,0.3);
-}
 
-select,input{
-width:100%;
-padding:12px;
-border:none;
-border-radius:10px;
-background:#0f172a;
-color:white;
-margin-top:8px;
-margin-bottom:10px;
-}
+background:
+rgba(30,41,59,0.78);
 
-button{
-padding:12px 18px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-weight:bold;
-background:linear-gradient(to right,#38bdf8,#22c55e);
-color:black;
-margin-top:10px;
-transition:0.3s;
-}
+backdrop-filter:blur(12px);
 
-button:hover{
-transform:scale(1.03);
-}
+border:
+1px solid rgba(255,255,255,0.08);
 
-.progress-container{
-width:100%;
-height:28px;
-background:#0f172a;
-border-radius:20px;
-overflow:hidden;
-margin-top:10px;
-}
+padding:14px;
 
-#progressBar{
-height:100%;
-width:0%;
-background:linear-gradient(to right,#22c55e,#38bdf8);
-transition:0.5s;
+border-radius:18px;
+
+margin-bottom:14px;
+
+box-shadow:
+0 0 15px rgba(0,0,0,0.25);
+
 }
 
 .chapter{
-background:#111827;
-padding:15px;
-border-radius:15px;
-margin-top:15px;
+
+background:
+linear-gradient(
+145deg,
+#0f172a,
+#111827
+);
+
+padding:14px;
+
+border-radius:14px;
+
+margin-top:14px;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+}
+
+.subject-title{
+margin-top:18px;
+font-size:20px;
+color:#22c55e;
+}
+
+select,input{
+
+width:100%;
+
+padding:10px;
+
+border:none;
+
+border-radius:10px;
+
+background:#020617;
+
+color:white;
+
+margin-top:6px;
+margin-bottom:8px;
+
+font-size:14px;
+
+outline:none;
+
+border:
+1px solid rgba(255,255,255,0.06);
+
+}
+
+button{
+
+padding:10px 14px;
+
+border:none;
+
+border-radius:12px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+to right,
+#38bdf8,
+#22c55e
+);
+
+color:black;
+
+margin-top:8px;
+
+font-size:14px;
+
+transition:0.3s;
+
+}
+
+button:hover{
+transform:scale(1.02);
+}
+
+.progress-container{
+
+width:100%;
+
+height:22px;
+
+background:#020617;
+
+border-radius:20px;
+
+overflow:hidden;
+
+margin-top:10px;
+
+display:flex;
+
+align-items:center;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
+}
+
+#progressBar{
+
+height:22px;
+
+width:0%;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+#22c55e,
+#38bdf8
+);
+
+transition:width 0.5s ease;
+
+display:block;
+
+}
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(120px,1fr));
+
+gap:10px;
+
+margin-top:10px;
+
+}
+
+.stat-box{
+
+background:
+linear-gradient(
+145deg,
+#0f172a,
+#111827
+);
+
+padding:12px;
+
+border-radius:14px;
+
+text-align:center;
+
+border:
+1px solid rgba(255,255,255,0.05);
+
 }
 
 table{
 width:100%;
 border-collapse:collapse;
 margin-top:10px;
+font-size:12px;
 }
 
 th,td{
 border:1px solid #334155;
-padding:10px;
+padding:6px;
+}
+
+th{
+background:#0f172a;
 }
 
 input[type="checkbox"]{
-transform:scale(1.3);
+transform:scale(1.2);
 width:auto;
-}
-
-.subject-title{
-margin-top:25px;
-font-size:24px;
-color:#22c55e;
+accent-color:#22c55e;
 }
 
 ul{
 padding-left:20px;
-margin-top:10px;
+margin-top:8px;
 }
 
 li{
-margin-bottom:6px;
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px;
-margin-top:15px;
-}
-
-.stat-box{
-background:#111827;
-padding:20px;
-border-radius:15px;
-text-align:center;
+margin-bottom:5px;
 }
 
 .red{
@@ -159,6 +301,18 @@ color:#22c55e;
 color:#eab308;
 }
 
+@media(max-width:600px){
+
+table{
+font-size:11px;
+}
+
+th,td{
+padding:5px;
+}
+
+}
+
 </style>
 </head>
 
@@ -168,9 +322,17 @@ color:#eab308;
 
 <select id="mainSelect">
 
-<option value="admin">ADMIN PANEL</option>
-<option value="full">FULL SYLLABUS PROGRESS</option>
-<option value="data">DATA FEEDER</option>
+<option value="admin">
+ADMIN PANEL
+</option>
+
+<option value="full">
+FULL SYLLABUS PROGRESS
+</option>
+
+<option value="data">
+DATA FEEDER
+</option>
 
 <option value="ut1">UNIT TEST 1</option>
 <option value="ut2">UNIT TEST 2</option>
@@ -318,7 +480,6 @@ Biology:[
 };
 
 const tests = {
-
 ut1:{
 title:"UNIT TEST 1",
 date:"31 May 2026",
@@ -338,199 +499,6 @@ Biology:[
 "Animal Kingdom"
 ]
 }
-},
-
-ut2:{
-title:"UNIT TEST 2",
-date:"10 June 2026",
-chapters:{
-Physics:[
-"Kinematics",
-"Current electricity"
-],
-Chemistry:[
-"Chemical Kinetics",
-"Chemical Equilibrium",
-"Ionic Equilibrium"
-],
-Biology:[
-"Sexual Reproduction in Flowering Plants",
-"Human Reproduction",
-"Reproductive Health"
-]
-}
-},
-
-ut3:{
-title:"UNIT TEST 3",
-date:"20 June 2026",
-chapters:{
-Physics:[
-"Laws of motion",
-"Electrostatic potential and capacitance"
-],
-Chemistry:[
-"Periodic Table",
-"Chemical Bonding and Molecular Structure"
-],
-Biology:[
-"Anatomy of Flowering Plants",
-"Morphology of Flowering Plants",
-"Structural Organisation in Animals",
-"Locomotion and Movement"
-]
-}
-},
-
-ut4:{
-title:"UNIT TEST 4 + REVIEW TEST 1",
-date:"30 June 2026",
-chapters:{
-Physics:[
-"Circular Motion",
-"Work, energy, and power",
-"Moving charges and magnetism",
-"Magnetism and matter"
-],
-Chemistry:[
-"Solutions",
-"Electrochemistry"
-],
-Biology:[
-"Principles of Inheritance and Variation",
-"Biotechnology – Principles and Processes",
-"Biotechnology and Its Applications"
-]
-}
-},
-ut5:{
-title:"UNIT TEST 5",
-date:"10 July 2026",
-chapters:{
-Physics:[
-"Centre of mass and collision",
-"Electromagnetic induction"
-],
-Chemistry:[
-"Thermodynamics",
-"Redox Reactions"
-],
-Biology:[
-"Molecular Basis of Inheritance",
-"Microbes in Human Welfare",
-"Evolution"
-]
-}
-},
-
-ut6:{
-title:"UNIT TEST 6 + REVIEW TEST 2",
-date:"20 July 2026",
-chapters:{
-Physics:[
-"System of particles and rotational motion",
-"Alternating current",
-"Electromagnetic waves"
-],
-Chemistry:[
-"P-Block Elements",
-"The d- and f-Block Elements",
-"Coordination Compounds"
-],
-Biology:[
-"Organisms and Populations",
-"Human Health and Diseases"
-]
-}
-},
-
-ut7:{
-title:"UNIT TEST 7",
-date:"30 July 2026",
-chapters:{
-Physics:[
-"Thermal properties of matter",
-"Thermodynamics",
-"Kinetic theory of gases",
-"Ray optics and optical instruments"
-],
-Chemistry:[
-"IUPAC",
-"Isomerism",
-"GOC",
-"Purification of Organic compounds"
-],
-Biology:[
-"Ecosystem",
-"Biodiversity and Conservation",
-"Chemical Coordination and Integration"
-]
-}
-},
-
-ut8:{
-title:"UNIT TEST 8",
-date:"10 August 2026",
-chapters:{
-Physics:[
-"Mechanical properties of solids",
-"Mechanical properties of fluids",
-"Wave optics"
-],
-Chemistry:[
-"Hydrocarbons",
-"Haloalkanes and Haloarenes"
-],
-Biology:[
-"Cell – The Unit of Life",
-"Cell Cycle and Cell Division",
-"Biomolecules",
-"Breathing and Exchange of Gases",
-"Body Fluids and Circulation"
-]
-}
-},
-
-ut9:{
-title:"UNIT TEST 9 + REVIEW TEST 3",
-date:"20 August 2026",
-chapters:{
-Physics:[
-"Gravitation",
-"Oscillations",
-"Dual nature of matter and radiation",
-"Atoms",
-"Nuclei"
-],
-Chemistry:[
-"Alcohols, Phenols and Ethers",
-"Aldehydes, Ketones and Carboxylic Acids"
-],
-Biology:[
-"Photosynthesis in Higher Plants",
-"Respiration in Plants",
-"Excretory Products and Their Elimination"
-]
-}
-},
-
-ut10:{
-title:"UNIT TEST 10 + REVIEW TEST 4",
-date:"30 August 2026",
-chapters:{
-Physics:[
-"Waves",
-"Semiconductor electronics"
-],
-Chemistry:[
-"Amines",
-"Biomolecules"
-],
-Biology:[
-"Plant Growth and Development",
-"Neural Control and Coordination"
-]
-}
 }
 
 };
@@ -546,6 +514,30 @@ return biologyTasks;
 function getKey(subject,chapter,task){
 
 return `${subject}_${chapter}_${task}`;
+
+}
+
+async function saveTaskToCloud(
+subject,
+chapter,
+task,
+value,
+date
+){
+
+const id =
+subject+"_"+chapter+"_"+task;
+
+await setDoc(
+doc(db,"tasks",id),
+{
+subject,
+chapter,
+task,
+done:value,
+date
+}
+);
 
 }
 
@@ -574,30 +566,41 @@ done++;
 
 }
 
-let percent = ((done/total)*100).toFixed(2);
+let percent =
+((done/total)*100).toFixed(2);
 
-const bar = document.getElementById("progressBar");
+const bar =
+document.getElementById("progressBar");
 
 if(bar){
 bar.style.width = percent+"%";
 }
 
-const text = document.getElementById("progressText");
+const text =
+document.getElementById("progressText");
 
 if(text){
-text.innerText = percent+"% Completed";
+text.innerText =
+percent+"% Completed";
 }
 
 }
 
-function fillDateTime(cb,subject,chapter,task){
+function fillDateTime(
+cb,
+subject,
+chapter,
+task
+){
 
-const row = cb.parentElement.parentElement;
+const row =
+cb.parentElement.parentElement;
 
 const input =
 row.querySelector(".dateField");
 
-const key = getKey(subject,chapter,task);
+const key =
+getKey(subject,chapter,task);
 
 const today =
 new Date().toISOString().split('T')[0];
@@ -619,8 +622,23 @@ now.toLocaleTimeString();
 
 input.value = formatted;
 
-localStorage.setItem(key,"done");
-localStorage.setItem(key+"_date",formatted);
+localStorage.setItem(
+key,
+"done"
+);
+
+localStorage.setItem(
+key+"_date",
+formatted
+);
+
+saveTaskToCloud(
+subject,
+chapter,
+task,
+true,
+formatted
+);
 
 let arr =
 JSON.parse(
@@ -644,7 +662,18 @@ JSON.stringify(arr)
 input.value="";
 
 localStorage.removeItem(key);
-localStorage.removeItem(key+"_date");
+
+localStorage.removeItem(
+key+"_date"
+);
+
+saveTaskToCloud(
+subject,
+chapter,
+task,
+false,
+""
+);
 
 let arr =
 JSON.parse(
@@ -683,7 +712,8 @@ let html = `
 
 getTasks(subject).forEach(task=>{
 
-const key = getKey(subject,chapter,task);
+const key =
+getKey(subject,chapter,task);
 
 const checked =
 localStorage.getItem(key)
@@ -736,37 +766,8 @@ return html;
 
 }
 
-function saveCalendarLog(subject,chapter,task){
-
-const today =
-new Date().toISOString().split('T')[0];
-
-const key =
-today+"_"+subject;
-
-let arr =
-JSON.parse(
-localStorage.getItem(key)
-|| "[]"
-);
-
-const text =
-chapter+" → "+task;
-
-if(!arr.includes(text)){
-
-arr.push(text);
-
-localStorage.setItem(
-key,
-JSON.stringify(arr)
-);
-
-}
-
-}
-
-let currentDate = new Date();
+let currentDate =
+new Date();
 
 function changeDay(num){
 
@@ -793,7 +794,9 @@ currentDate.toDateString();
 
 const data =
 JSON.parse(
-localStorage.getItem(d+"_"+sub)
+localStorage.getItem(
+d+"_"+sub
+)
 || "[]"
 );
 
@@ -808,7 +811,10 @@ x=>`<li>${x}</li>`
 
 }
 
-function getChapterAccuracy(subject,chapter){
+function getChapterAccuracy(
+subject,
+chapter
+){
 
 const key =
 "accuracy_"+subject+"_"+chapter;
@@ -819,7 +825,8 @@ localStorage.getItem(key)
 || '{"attempted":0,"correct":0}'
 );
 
-if(data.attempted===0) return 0;
+if(data.attempted===0)
+return 0;
 
 return (
 (data.correct/data.attempted)*100
@@ -842,7 +849,10 @@ let html = `
 <li>9:00 - 12:00 → Biology</li>
 </ul>
 
-<h3>Total Study Hours = 12.5 hrs/day</h3>
+<h3>
+Total Study Hours =
+12.5 hrs/day
+</h3>
 
 <h2>Overall Progress</h2>
 
@@ -861,11 +871,11 @@ let html = `
 <h2>Study Calendar</h2>
 
 <button onclick="changeDay(-1)">
-⬅ Previous Day
+⬅ Previous
 </button>
 
 <button onclick="changeDay(1)">
-Next Day ➡
+Next ➡
 </button>
 
 <h3 id="calendarDate"></h3>
@@ -914,7 +924,7 @@ Next Day ➡
 
 <div class="card">
 
-<h2>Weak Chapters (&lt;80%)</h2>
+<h2>Weak Chapters</h2>
 
 <div id="weakList"></div>
 
@@ -949,10 +959,11 @@ function updateSubjectCompletion(){
 
 for(let subject in allSubjects){
 
-let total=0;
-let done=0;
+let total = 0;
+let done = 0;
 
-allSubjects[subject].forEach(ch=>{
+allSubjects[subject]
+.forEach(ch=>{
 
 getTasks(subject)
 .forEach(task=>{
@@ -969,7 +980,7 @@ done++;
 
 });
 
-let percent =
+const percent =
 ((done/total)*100)
 .toFixed(1);
 
@@ -1011,10 +1022,14 @@ ${subject}
 <ul>
 `;
 
-allSubjects[subject].forEach(ch=>{
+allSubjects[subject]
+.forEach(ch=>{
 
 const acc =
-getChapterAccuracy(subject,ch);
+getChapterAccuracy(
+subject,
+ch
+);
 
 if(acc<80 && acc>0){
 
@@ -1038,147 +1053,14 @@ document.getElementById(
 
 }
 
-function renderDataFeeder(){
-
-let html = `
-
-<div class="card">
-
-<h2>DATA FEEDER</h2>
-
-<label>Subject</label>
-
-<select id="feedSubject"
-onchange="loadChapters()">
-
-<option>Physics</option>
-<option>Chemistry</option>
-<option>Biology</option>
-
-</select>
-
-<label>Chapter</label>
-
-<select id="feedChapter"></select>
-
-<label>Total Questions Attempted</label>
-
-<input
-type="number"
-id="attempted"
-placeholder="Enter Attempted Questions"
->
-
-<label>Correct Questions</label>
-
-<input
-type="number"
-id="correct"
-placeholder="Enter Correct Questions"
->
-
-<button onclick="saveAccuracy()">
-SAVE DATA
-</button>
-
-<div id="accuracyResult"></div>
-
-</div>
-`;
-
-document.getElementById(
-"content"
-).innerHTML = html;
-
-loadChapters();
-
-}
-
-function loadChapters(){
-
-const sub =
-document.getElementById(
-"feedSubject"
-).value;
-
-const chapterSelect =
-document.getElementById(
-"feedChapter"
-);
-
-chapterSelect.innerHTML = "";
-
-allSubjects[sub].forEach(ch=>{
-
-chapterSelect.innerHTML += `
-<option>${ch}</option>
-`;
-
-});
-
-}
-
-function saveAccuracy(){
-
-const sub =
-document.getElementById(
-"feedSubject"
-).value;
-
-const ch =
-document.getElementById(
-"feedChapter"
-).value;
-
-const attempted =
-Number(
-document.getElementById(
-"attempted"
-).value
-);
-
-const correct =
-Number(
-document.getElementById(
-"correct"
-).value
-);
-
-const accuracy =
-((correct/attempted)*100)
-.toFixed(1);
-
-localStorage.setItem(
-"accuracy_"+sub+"_"+ch,
-JSON.stringify({
-attempted,
-correct
-})
-);
-
-document.getElementById(
-"accuracyResult"
-).innerHTML = `
-<h3 class="
-${accuracy>=80
-? 'green'
-: 'red'}
-">
-
-Accuracy :
-${accuracy}%
-
-</h3>
-`;
-
-}
-
 function renderFull(){
 
 let html = `
 <div class="card">
 
-<h2>FULL SYLLABUS PROGRESS</h2>
+<h2>
+FULL SYLLABUS PROGRESS
+</h2>
 `;
 
 for(let subject in allSubjects){
@@ -1263,14 +1145,14 @@ function resetAllData(){
 
 const first =
 confirm(
-"Are you sure you want to reset everything?"
+"Reset all data?"
 );
 
 if(!first) return;
 
 const second =
 confirm(
-"This will permanently delete ALL data. Continue?"
+"Permanent delete?"
 );
 
 if(!second) return;
@@ -1299,10 +1181,6 @@ else if(val==="full"){
 renderFull();
 }
 
-else if(val==="data"){
-renderDataFeeder();
-}
-
 else{
 renderUT(val);
 }
@@ -1311,6 +1189,45 @@ renderUT(val);
 );
 
 renderAdmin();
+
+</script>
+
+<script type="module">
+
+import {
+initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+getFirestore,
+doc,
+setDoc
+}
+from
+"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+
+apiKey: "PASTE_YOUR_KEY",
+authDomain: "PASTE_YOUR_DOMAIN",
+projectId: "PASTE_PROJECT_ID",
+storageBucket: "PASTE_BUCKET",
+messagingSenderId: "PASTE_MSG_ID",
+appId: "PASTE_APP_ID"
+
+};
+
+const app =
+initializeApp(firebaseConfig);
+
+const db =
+getFirestore(app);
+
+window.db = db;
+window.doc = doc;
+window.setDoc = setDoc;
 
 </script>
 
