@@ -1918,7 +1918,7 @@ try{
 // Clear local storage
 localStorage.clear();
 
-// Delete Firebase task data
+// DELETE all task documents
 const snapshot =
 await getDocs(
 collection(db,"tasks")
@@ -1926,16 +1926,13 @@ collection(db,"tasks")
 
 for(const item of snapshot.docs){
 
-await setDoc(
-doc(db,"tasks",item.id),
-{
-done:false
-}
+await deleteDoc(
+doc(db,"tasks",item.id)
 );
 
 }
 
-// Delete report status
+// DELETE report status docs
 const reportSnapshot =
 await getDocs(
 collection(db,"reportStatus")
@@ -1943,15 +1940,14 @@ collection(db,"reportStatus")
 
 for(const item of reportSnapshot.docs){
 
-await setDoc(
-doc(db,"reportStatus",item.id),
-{}
+await deleteDoc(
+doc(db,"reportStatus",item.id)
 );
 
 }
 
 alert(
-"All data reset successfully."
+"Everything deleted successfully."
 );
 
 location.reload();
@@ -2275,7 +2271,8 @@ doc,
 setDoc,
 getDocs,
 collection,
-onSnapshot
+onSnapshot,
+deleteDoc
 }
 from
 "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -2308,6 +2305,8 @@ window.getDocs = getDocs;
 window.collection = collection;
 
 window.onSnapshot = onSnapshot;
+
+window.deleteDoc = deleteDoc;
 
 window.firebaseReady = true;
 
