@@ -1371,7 +1371,10 @@ latest =
 "📨 Last Report Sent:<br>" +
 data.date +
 "<br><br>🕒 " +
-data.sentAt;
+(
+data.sentAt ||
+"Time unavailable"
+);
 
 });
 
@@ -1894,7 +1897,7 @@ document.getElementById(
 
 }
 
-function resetAllData(){
+async function resetAllData(){
 
 const first =
 confirm(
@@ -1910,13 +1913,58 @@ confirm(
 
 if(!second) return;
 
+try{
+
+// Clear local storage
 localStorage.clear();
+
+// Delete Firebase task data
+const snapshot =
+await getDocs(
+collection(db,"tasks")
+);
+
+for(const item of snapshot.docs){
+
+await setDoc(
+doc(db,"tasks",item.id),
+{
+done:false
+}
+);
+
+}
+
+// Delete report status
+const reportSnapshot =
+await getDocs(
+collection(db,"reportStatus")
+);
+
+for(const item of reportSnapshot.docs){
+
+await setDoc(
+doc(db,"reportStatus",item.id),
+{}
+);
+
+}
 
 alert(
 "All data reset successfully."
 );
 
 location.reload();
+
+}catch(error){
+
+console.log(error);
+
+alert(
+"Reset failed"
+);
+
+}
 
 }
 
